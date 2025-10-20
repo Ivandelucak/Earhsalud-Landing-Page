@@ -3,7 +3,7 @@ import "./globals.css";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import BackArrow from "@/components/BackArrow";
+import ClientBackButtonWrapper from "@/components/ClientBackButtonWrapper";
 
 export const metadata: Metadata = {
   title: "Earh Salud",
@@ -17,12 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="antialiased min-h-dvh bg-white text-neutral-900">
+      <body className="antialiased min-h-dvh bg-white text-neutral-900 relative">
         {/* Barra superior visible en TODAS las páginas */}
         <Header />
 
-        {/* Flecha “volver” (condicional según ruta, controlada dentro del componente) */}
-        <BackArrow />
+        {/* Flecha “volver” — aparece en todas las páginas excepto Home */}
+        <ClientBackButtonWrapper />
 
         <main className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
           {children}
