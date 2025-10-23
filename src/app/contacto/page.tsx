@@ -50,9 +50,7 @@ export default function ContactoPage() {
               contacto@tu-dominio.com
             </a>
           </p>
-          <p className="text-neutral-500">
-            (Editá estos datos cuando tengas el número y dominio definitivos)
-          </p>
+          <p className="text-neutral-500">(A editar)</p>
         </div>
       </aside>
     </section>
