@@ -1,13 +1,12 @@
-// FILE: src/app/page.tsx
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Earh Salud – Asistencia médica y Policonsultorio",
+  title: "Earh Salud – Internación domiciliaria y Policonsultorio",
   description:
-    "Empresa de salud con cobertura en CABA y GBA. Asistencia médica a domicilio y Policonsultorio con turnos rápidos y atención humana.",
+    "Empresa de salud con cobertura en CABA y GBA. Internación domiciliaria y Policonsultorio con turnos rápidos y atención humana.",
 };
 
 export default function Page() {
@@ -20,8 +19,8 @@ export default function Page() {
             Cuidado y asistencia a tu medida
           </h1>
           <p className="mt-3 sm:mt-4 text-neutral-600 max-w-2xl mx-auto text-base sm:text-lg">
-            Earh Salud brinda asistencia médica y servicios de Policonsultorio
-            en CABA y GBA. Atención humana y profesional.
+            Earh Salud brinda internación domiciliaria y servicios de
+            Policonsultorio en CABA y GBA. Atención humana y profesional.
           </p>
 
           <div className="mt-7 sm:mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -94,7 +93,7 @@ export default function Page() {
 
         <div>
           <p className="text-sm tracking-wide text-blue-700 font-semibold mb-1">
-            ATENCIÓN DOMICILIARIA Y POLICONSULTORIO
+            INTERNACIÓN DOMICILIARIA Y POLICONSULTORIO
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
             Cuidado integral para tu bienestar
@@ -102,7 +101,7 @@ export default function Page() {
           <p className="text-neutral-700 leading-7">
             En <strong>Earh Salud</strong> trabajamos para mejorar tu calidad de
             vida, brindando soluciones de atención médica confiables y humanas.
-            Ofrecemos <strong>asistencia domiciliaria</strong> para adultos y
+            Ofrecemos <strong>internación domiciliaria</strong> para adultos y
             personas mayores, y un <strong>servicio de Policonsultorio</strong>{" "}
             que permite acceder a profesionales de primer nivel sin demoras.
             Nuestro compromiso es garantizar una atención rápida, segura y
@@ -131,8 +130,8 @@ export default function Page() {
             </h3>
             <p className="text-neutral-700">
               Ser la red de salud de referencia en CABA y GBA, combinando
-              asistencia domiciliaria y Policonsultorio para un cuidado rápido y
-              accesible.
+              internación domiciliaria y Policonsultorio para un cuidado rápido
+              y accesible.
             </p>
           </div>
           <div>
@@ -155,7 +154,7 @@ export default function Page() {
           </h2>
           <ul className="grid sm:grid-cols-2 gap-4 text-neutral-700">
             <li>✅ Turnos rápidos y sin demoras</li>
-            <li>✅ Atención médica a domicilio</li>
+            <li>✅ Internación domiciliaria</li>
             <li>✅ Policonsultorio con especialistas</li>
             <li>✅ Cobertura en CABA y GBA</li>
             <li>✅ Acompañamiento integral al paciente</li>
@@ -181,6 +180,72 @@ export default function Page() {
             </li>
           </ol>
         </div>
+
+        {/* CARRUSEL DE OBRAS SOCIALES */}
+        <section className="py-10">
+          <h2 className="text-2xl font-bold mb-6 text-blue-700 text-center">
+            Obras Sociales y Prepagas Asociadas
+          </h2>
+
+          <div className="relative overflow-hidden">
+            {/* Track ancho con dos grupos idénticos para loop infinito */}
+            <div className="flex w-max animate-marquee">
+              {/* Grupo 1 */}
+              <div className="flex items-center gap-10 pr-10">
+                {[
+                  "/logos/osde.png",
+                  "/logos/swiss.png",
+                  "/logos/galeno.png",
+                  "/logos/medicus.png",
+                  "/logos/omint.png",
+                  "/logos/pami.png",
+                  "/logos/accord.png",
+                ].map((logo, i) => (
+                  <div
+                    key={i}
+                    className="relative w-28 sm:w-36 h-12 sm:h-16 flex-shrink-0"
+                    aria-hidden={false}
+                  >
+                    <Image
+                      src={logo}
+                      alt="Logo de obra social o prepaga"
+                      fill
+                      className="object-contain"
+                      priority={false}
+                    />
+                  </div>
+                ))}
+              </div>
+
+              {/* Grupo 2 (idéntico) */}
+              <div className="flex items-center gap-10 pr-10">
+                {[
+                  "/logos/osde.png",
+                  "/logos/swiss.png",
+                  "/logos/galeno.png",
+                  "/logos/medicus.png",
+                  "/logos/omint.png",
+                  "/logos/pami.png",
+                  "/logos/accord.png",
+                ].map((logo, i) => (
+                  <div
+                    key={`dup-${i}`}
+                    className="relative w-28 sm:w-36 h-12 sm:h-16 flex-shrink-0"
+                    aria-hidden={true}
+                  >
+                    <Image
+                      src={logo}
+                      alt=""
+                      fill
+                      className="object-contain"
+                      priority={false}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Testimonios */}
         <div>
@@ -306,10 +371,10 @@ export default function Page() {
       {/* SERVICIOS DESTACADOS */}
       <section className="grid gap-6 sm:gap-8 md:grid-cols-2">
         <FeatureCard
-          title="Asistencia médica"
-          body="Profesionales para atención domiciliaria, seguimiento y coordinación de cuidados."
+          title="Internación domiciliaria"
+          body="Profesionales para atención en el hogar, seguimiento y coordinación de cuidados."
           href="/asistencia-medica"
-          cta="Ver asistencia médica"
+          cta="Ver internación domiciliaria"
         />
         <FeatureCard
           title="Policonsultorio"

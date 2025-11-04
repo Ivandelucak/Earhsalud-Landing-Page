@@ -1,4 +1,3 @@
-// FILE: src/app/servicios/page.tsx
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -6,7 +5,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Servicios – Earh Salud",
   description:
-    "Conocé nuestros servicios de asistencia médica a domicilio y Policonsultorio. Atención profesional, humana y coordinada.",
+    "Conocé nuestros servicios de internación domiciliaria y Policonsultorio. Atención profesional, humana y coordinada.",
 };
 
 export default function ServiciosPage() {
@@ -25,8 +24,8 @@ export default function ServiciosPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <BannerCard
           href="/asistencia-medica"
-          title="Asistencia médica"
-          body="Profesionales para atención domiciliaria, seguimiento y coordinación de cuidados."
+          title="Internación domiciliaria"
+          body="Profesionales para atención en el hogar, seguimiento y coordinación de cuidados."
           imageSrc="/servicios-asistencia.jpg"
         />
         <BannerCard
@@ -45,9 +44,11 @@ export default function ServiciosPage() {
 
         <div className="grid gap-6 sm:grid-cols-2">
           <div>
-            <h3 className="text-lg font-semibold mb-2">Asistencia médica</h3>
+            <h3 className="text-lg font-semibold mb-2">
+              Internación domiciliaria
+            </h3>
             <ul className="space-y-2 text-neutral-700">
-              <Bullet>Visita médica domiciliaria y seguimiento clínico.</Bullet>
+              <Bullet>Atención en el hogar y seguimiento clínico.</Bullet>
               <Bullet>
                 Coordinación con kinesiología, enfermería y cuidadores.
               </Bullet>
@@ -82,8 +83,8 @@ export default function ServiciosPage() {
         </h2>
         <ol className="list-decimal pl-5 space-y-2 text-neutral-700">
           <li>
-            <strong>Contanos tu necesidad:</strong> elegí Asistencia médica o
-            Policonsultorio.
+            <strong>Contanos tu necesidad:</strong> elegí Internación
+            domiciliaria o Policonsultorio.
           </li>
           <li>
             <strong>Coordinamos el turno/visita:</strong> te proponemos día y
