@@ -3,6 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --brand-primary: #345c76;
+  --brand-secondary: #689ea9;
+  --brand-accent: #a6c8ce;
+  --brand-soft: #d9ecef;
 }
 
 body {
@@ -26,4 +30,11 @@ html {
 
 .animate-marquee {
   animation: marquee 30s linear infinite;
+}
+
+.blog-prose hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: 0;
+  border-top: 1px solid rgb(229 231 235);
 }
