@@ -1,157 +1,142 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
-const nav = [
+const navItems = [
   { href: "/", label: "Inicio" },
   { href: "/servicios", label: "Servicios" },
-  { href: "/ubicacion", label: "Ubicación" },
+  { href: "/internacion-domiciliaria", label: "Internación domiciliaria" },
+  {
+    href: "/consultorios-medicos-uruguay",
+    label: "Consultorios Médicos Uruguay",
+  },
   { href: "/blog", label: "Blog" },
   { href: "/contacto", label: "Contacto" },
 ];
 
+function isActive(pathname: string, href: string) {
+  if (href === "/") return pathname === "/";
+  return pathname.startsWith(href);
+}
+
 export default function Header() {
   const pathname = usePathname();
-  const router = useRouter();
-
   const [open, setOpen] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
 
-  // Cerrar con animación
-  const handleClose = (delay = 0) => {
-    setIsClosing(true);
-    setTimeout(() => {
-      setOpen(false);
-      setIsClosing(false);
-    }, 250 + delay);
-  };
-
-  // Cerrar si se toca fuera del panel
   useEffect(() => {
-    const handleTouchOutside = (e: TouchEvent) => {
-      const aside = document.querySelector("aside[data-sidebar]");
-      if (aside && !aside.contains(e.target as Node)) {
-        handleClose();
-      }
-    };
-
-    if (open) {
-      document.addEventListener("touchstart", handleTouchOutside);
-    } else {
-      document.removeEventListener("touchstart", handleTouchOutside);
-    }
-
+    document.body.style.overflow = open ? "hidden" : "";
     return () => {
-      document.removeEventListener("touchstart", handleTouchOutside);
+      document.body.style.overflow = "";
     };
   }, [open]);
 
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
   return (
-    <header className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-6">
-        {/* Botón menú (solo mobile) */}
-        <button
-          className="inline-flex items-center justify-center rounded-md p-2 -ml-2 md:hidden hover:bg-neutral-100"
-          aria-label="Abrir menú"
-          onClick={() => setOpen(true)}
-        >
-          <Menu className="h-5 w-5 text-neutral-700" />
-        </button>
-
-        {/* Branding */}
-        <Link href="/" className="font-semibold tracking-tight">
-          Earh Salud
-        </Link>
-
-        {/* Nav Desktop */}
-        <nav className="hidden md:flex items-center gap-6">
-          {nav.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              className={`text-sm hover:underline underline-offset-4 ${
-                pathname === href ? "font-semibold" : "text-neutral-600"
-              }`}
-            >
-              {label}
-            </Link>
-          ))}
-        </nav>
-
-        {/* CTA derecha */}
-        <Link
-          href="/contacto"
-          className="inline-flex items-center rounded-lg px-3 py-1.5 text-sm font-medium bg-blue-600 text-white hover:bg-blue-700"
-        >
-          Solicitar cotización
-        </Link>
-      </div>
-
-      {/* Sidebar Mobile */}
-      {(open || isClosing) && (
-        <>
-          {/* Overlay */}
-          <div
-            className={`fixed inset-0 z-40 bg-black/40 backdrop-blur-sm md:hidden transition-opacity duration-300 ${
-              isClosing ? "opacity-0" : "opacity-100"
-            }`}
-            onClick={() => handleClose()}
-          />
-
-          {/* Panel */}
-          <aside
-            data-sidebar
-            className={`
-              fixed left-0 top-0 z-50 h-dvh w-72 max-w-[80%] md:hidden
-              bg-white shadow-xl border-r transform transition-transform duration-300
-              ${isClosing ? "-translate-x-full" : "translate-x-0"}
-            `}
-            role="dialog"
-            aria-modal="true"
+    <>
+      <header className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+          <button
+            type="button"
+            className="inline-flex items-center justify-center rounded-md p-2 text-neutral-700 hover:bg-neutral-100 md:hidden"
+            aria-label="Abrir menú"
+            aria-expanded={open}
+            onClick={() => setOpen(true)}
           >
-            <div className="h-14 flex items-center justify-between px-4 border-b">
-              <span className="font-semibold">Menú</span>
-              <button
-                onClick={() => handleClose()}
-                aria-label="Cerrar menú"
-                className="rounded-md p-2 hover:bg-neutral-100"
-              >
-                <X className="h-5 w-5 text-neutral-700" />
-              </button>
-            </div>
+            <Menu className="h-5 w-5" />
+          </button>
 
-            <nav className="p-2">
-              {nav.map(({ href, label }) => {
-                const active = pathname === href;
-                return (
-                  <button
-                    key={href}
-                    onClick={() => {
-                      handleClose(100); // animación + breve pausa
-                      setTimeout(() => router.push(href), 100);
-                    }}
-                    className={`
-                      w-full text-left flex items-center justify-between
-                      rounded-lg px-3 py-3 text-sm transition-colors
-                      ${
-                        active
-                          ? "bg-neutral-100 font-semibold"
-                          : "hover:bg-neutral-50 text-neutral-700"
-                      }
-                    `}
-                  >
-                    {label}
-                    <span aria-hidden>›</span>
-                  </button>
-                );
-              })}
-            </nav>
-          </aside>
-        </>
-      )}
-    </header>
+          <Link
+            href="/"
+            className="flex items-center gap-2 font-semibold tracking-tight text-neutral-900"
+          >
+            <span>Earh Salud</span>
+          </Link>
+
+          <nav className="hidden items-center gap-6 md:flex">
+            {navItems.map(({ href, label }) => {
+              const active = isActive(pathname, href);
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  className={`text-sm underline-offset-4 transition ${
+                    active
+                      ? "font-semibold text-blue-700"
+                      : "text-neutral-600 hover:text-blue-700 hover:underline"
+                  }`}
+                >
+                  {label}
+                </Link>
+              );
+            })}
+          </nav>
+
+          <Link
+            href="/contacto"
+            className="inline-flex items-center rounded-lg bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700"
+          >
+            Solicitar cotización
+          </Link>
+        </div>
+      </header>
+
+      <div
+        className={`fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity duration-200 md:hidden ${
+          open
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setOpen(false)}
+      />
+
+      <aside
+        className={`fixed left-0 top-0 bottom-0 z-50 w-72 max-w-[80%] bg-white border-r shadow-xl transition-transform duration-300 md:hidden ${
+          open ? "translate-x-0" : "-translate-x-full"
+        }`}
+        role="dialog"
+        aria-modal="true"
+      >
+        <div className="flex h-14 items-center justify-between border-b px-4">
+          <span className="text-sm font-semibold text-neutral-900">
+            Menú Earh Salud
+          </span>
+          <button
+            type="button"
+            aria-label="Cerrar menú"
+            onClick={() => setOpen(false)}
+            className="inline-flex items-center justify-center rounded-md p-2 text-neutral-700 hover:bg-neutral-100"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+
+        <nav className="space-y-1 p-2">
+          {navItems.map(({ href, label }) => {
+            const active = isActive(pathname, href);
+            return (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setOpen(false)}
+                className={`flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-sm transition-colors ${
+                  active
+                    ? "bg-neutral-100 font-semibold text-neutral-900"
+                    : "text-neutral-700 hover:bg-neutral-50"
+                }`}
+              >
+                <span>{label}</span>
+                <span aria-hidden>›</span>
+              </Link>
+            );
+          })}
+        </nav>
+      </aside>
+    </>
   );
 }

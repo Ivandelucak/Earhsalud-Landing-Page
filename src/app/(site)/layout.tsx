@@ -1,10 +1,12 @@
+// FILE: src/app/(site)/layout.tsx
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
 
 export const metadata: Metadata = {
   title: "Earh Salud",
-  description: "Internación domiciliaria y contenidos informativos.",
+  description: "Internación domiciliaria y servicios de salud en CABA y GBA.",
 };
 
 export default function SiteLayout({
@@ -13,12 +15,13 @@ export default function SiteLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-dvh flex flex-col">
+    <>
       <Header />
-      <main className="mx-auto max-w-6xl w-full px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+      <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
         {children}
       </main>
       <Footer />
-    </div>
+      <WhatsAppFloatingButton href="https://wa.me/541130031247?text=Hola%20Earh%20Salud%2C%20quisiera%20hacer%20una%20consulta" />
+    </>
   );
 }

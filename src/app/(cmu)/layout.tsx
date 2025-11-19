@@ -1,21 +1,24 @@
+// FILE: src/app/(cmu)/layout.tsx
 import type { Metadata } from "next";
 import HeaderCmu from "@/components/HeaderCmu";
-// si usás subbarra propia:
-// import CmuBar from "@/components/cmu/CmuBar";
+import Footer from "@/components/Footer";
+import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
 
 export const metadata: Metadata = {
-  title: "Consultorios Médicos Uruguay – Policonsultorio",
-  description: "Uruguay 266 (Microcentro). Turnos ágiles y atención cercana.",
+  title: "Consultorios Médicos Uruguay",
+  description:
+    "Consultorios Médicos Uruguay: atención primaria, clínica médica y especialidades en Microcentro.",
 };
 
 export default function CmuLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-dvh flex flex-col">
+    <>
       <HeaderCmu />
-      {/* <CmuBar /> */}
-      <main className="mx-auto max-w-6xl w-full px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+      <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
         {children}
       </main>
-    </div>
+      <Footer />
+      <WhatsAppFloatingButton href="https://wa.me/541130031247?text=Hola%20CMU%2C%20quisiera%20hacer%20una%20consulta" />
+    </>
   );
 }

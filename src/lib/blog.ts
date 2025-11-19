@@ -13,6 +13,7 @@ export type PostMeta = {
   keywords?: string[];
   author?: string;
   image?: string; // ruta relativa en /public (por ej: /blog/nobel-2025.jpg)
+  category?: string;
 };
 
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
