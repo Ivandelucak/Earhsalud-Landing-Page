@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { getAllSlugs, getPostBySlug } from "@/lib/blog";
+import Link from "next/link";
 
 type Params = { slug: string };
 
@@ -101,18 +102,18 @@ export default async function BlogPostPage({ params }: { params: Params }) {
 
       {/* Navegación simple */}
       <div className="pt-6 flex flex-wrap gap-3">
-        <link
+        <Link
           href="/blog"
           className="in e-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm hover:bg-neutral-50"
         >
           ← Volver al Blog
-        </link>
-        <link
+        </Link>
+        <Link
           href="/contacto"
           className="inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm hover:bg-neutral-50"
         >
           Hacer una consulta
-        </link>
+        </Link>
       </div>
     </article>
   );
