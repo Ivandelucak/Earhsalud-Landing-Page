@@ -6,17 +6,25 @@
    Base global
    =========================== */
 
-:root {
-  --earh-blue-50: #e4f1f7;
-  --earh-blue-100: #c8dfea;
-  --earh-blue-200: #9fbfd5;
-  --earh-blue-300: #769fbe;
-  --earh-blue-400: #4f80a7;
-  --earh-blue-500: #356890;
-  --earh-blue-600: #25506f; /* ideal para bordes y textos importantes */
-  --earh-blue-700: #1c3e57;
-  --earh-blue-800: #132a3b;
-  --earh-blue-900: #0c1c28;
+@theme {
+  /* Azules Earh Salud */
+  --color-earh-blue-50: #e4f1f7;
+  --color-earh-blue-100: #c8dfea;
+  --color-earh-blue-200: #9fbfd5;
+  --color-earh-blue-300: #769fbe;
+  --color-earh-blue-400: #4f80a7;
+  --color-earh-blue-500: #356890;
+  --color-earh-blue-600: #178c9b; /* textos importantes / bordes */
+  --color-earh-blue-700: #116a92;
+  --color-earh-blue-800: #132a3b;
+  --color-earh-blue-900: #0b4a6f; /* títulos bien azules */
+
+  /* Verdes (WhatsApp, estados positivos) */
+  --color-earh-green-100: #dff5e9;
+  --color-earh-green-600: #25d366;
+
+  /* Fondo crema suave */
+  --color-earh-cream-50: #fff9f3;
 }
 
 /* Fuente atada a --font-sans (Source Sans 3) */

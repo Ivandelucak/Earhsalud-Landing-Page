@@ -1,4 +1,5 @@
-﻿import type { Config } from "tailwindcss";
+﻿// tailwind.config.ts
+import type { Config } from "tailwindcss";
 import typography from "@tailwindcss/typography";
 
 const config: Config = {
@@ -6,30 +7,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Paleta nueva Earh Salud
-        earh: {
-          blue: {
-            50: "var(--earh-blue-50)",
-            100: "var(--earh-blue-100)",
-            200: "var(--earh-blue-200)",
-            300: "var(--earh-blue-300)",
-            400: "var(--earh-blue-400)",
-            500: "var(--earh-blue-500)",
-            600: "var(--earh-blue-600)",
-            700: "var(--earh-blue-700)",
-            800: "var(--earh-blue-800)",
-            900: "var(--earh-blue-900)",
-          },
-          green: {
-            600: "#25D366", // WhatsApp
-            100: "#DFF5E9",
-          },
-          cream: {
-            50: "#FFF9F3",
-          },
-        },
+        "earh-blue-50": "#e4f1f7",
+        "earh-blue-100": "#c8dfea",
+        "earh-blue-200": "#9fbfd5",
+        "earh-blue-300": "#769fbe",
+        "earh-blue-400": "#4f80a7",
+        "earh-blue-500": "#356890",
+        "earh-blue-600": "#178c9b", // textos importantes / bordes
+        "earh-blue-700": "#116a92",
+        "earh-blue-800": "#132a3b",
+        "earh-blue-900": "#0b4a6f", // títulos
 
-        // Paleta anterior (por si hay clases viejas usándola)
+        "earh-green-100": "#DFF5E9",
+        "earh-green-600": "#25D366",
+
+        "earh-cream-50": "#FFF9F3",
+
+        // Paleta anterior por compatibilidad
         brand: {
           50: "#E8F6F8",
           400: "#21A8B9",
@@ -45,9 +39,7 @@ const config: Config = {
       },
 
       fontFamily: {
-        // Por si en algún momento usás display separado
         display: ["var(--font-display)", "system-ui", "sans-serif"],
-        // Fuente base de todo el sitio
         sans: ["var(--font-source-sans-3)", "system-ui", "sans-serif"],
       },
 

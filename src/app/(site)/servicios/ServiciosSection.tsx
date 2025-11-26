@@ -24,9 +24,9 @@ const WHATSAPP_HREF =
 export default function ServiciosSection() {
   return (
     <section className="space-y-10">
-      {/* HEADER: siempre visible, animación simple */}
+      {/* HEADER */}
       <motion.header {...heroAnim} className="space-y-3">
-        <p className="text-xs font-semibold tracking-wide text-blue-700">
+        <p className="text-xs font-semibold tracking-wide text-earh-blue-600">
           SERVICIOS DE EARH SALUD
         </p>
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -34,9 +34,9 @@ export default function ServiciosSection() {
         </h1>
         <p className="max-w-3xl text-neutral-700">
           Earh Salud ofrece internación domiciliaria en CABA y Gran Buenos Aires
-          y atención en consultorios en Uruguay 266 (Microcentro). Acá podés ver
-          qué incluye cada servicio y elegir la opción que mejor se adapte a tu
-          situación.
+          y atención en consultorios en Uruguay 266 (Microcentro). En esta
+          sección podés ver qué incluye cada servicio y cómo combinarlos según
+          la situación de la persona y la familia.
         </p>
       </motion.header>
 
@@ -49,13 +49,14 @@ export default function ServiciosSection() {
           href="/internacion-domiciliaria"
           title="Internación domiciliaria"
           body="Cuidado en el hogar para personas adultas y mayores, con cuidadores capacitados, coordinación profesional y seguimiento continuo."
-          imageSrc="/servicios-asistencia.jpg"
+          imageSrc="/imagenes/home-hero-alt.jpeg"
         />
+
         <BannerCard
           href="/consultorios-medicos-uruguay"
           title="Consultorios Médicos Uruguay"
           body="Consultas clínicas y de especialidades, turnos ágiles en Microcentro, CABA."
-          imageSrc="/servicios-clinica.jpg"
+          imageSrc="/imagenes/cmu-sala-espera.jpeg"
         />
       </motion.section>
 
@@ -64,36 +65,41 @@ export default function ServiciosSection() {
         {...sectionInView}
         className="rounded-2xl border bg-white/90 p-6 shadow-sm sm:p-8"
       >
-        <h2 className="mb-4 text-2xl font-semibold text-blue-700">
-          ¿Qué incluye cada servicio?
+        <h2 className="mb-4 text-2xl font-semibold text-earh-blue-900">
+          ¿Qué incluye cada servicio en la práctica?
         </h2>
 
         <div className="grid gap-6 sm:grid-cols-2">
-          <div>
-            <h3 className="text-lg font-semibold">Internación domiciliaria</h3>
+          <div className="rounded-xl bg-earh-cream-50/80 p-5 sm:p-6">
+            <h3 className="text-lg font-semibold text-earh-blue-900">
+              Internación domiciliaria
+            </h3>
             <p className="mt-1 text-sm text-neutral-700">
               Pensada para personas que necesitan cuidados sostenidos, pero
-              pueden permanecer en su hogar con acompañamiento adecuado.
+              pueden permanecer en su hogar con acompañamiento adecuado y
+              coordinación profesional.
             </p>
             <ul className="mt-3 space-y-2 text-neutral-700">
               <Bullet>
-                Cuidadores capacitados y equipo interdisciplinario.
+                Cuidadores capacitados y equipo interdisciplinario en contacto
+                permanente.
               </Bullet>
               <Bullet>
-                Asistencia en higiene, movilidad y actividades cotidianas.
+                Asistencia en higiene, movilidad, alimentación y actividades
+                cotidianas.
               </Bullet>
               <Bullet>
                 Seguimiento de indicaciones médicas externas y coordinación con
-                profesionales.
+                profesionales tratantes.
               </Bullet>
               <Bullet>
-                Comunicación continua con la familia y ajustes del plan según
+                Comunicación continua con la familia y ajustes del plan según la
                 evolución.
               </Bullet>
             </ul>
             <Link
               href="/internacion-domiciliaria"
-              className="mt-4 inline-flex items-center text-sm font-medium text-blue-700 underline-offset-4 hover:underline"
+              className="mt-4 inline-flex items-center text-sm font-medium text-earh-blue-700 underline-offset-4 hover:underline"
             >
               Ver más sobre internación domiciliaria
               <span aria-hidden className="ml-1">
@@ -102,13 +108,13 @@ export default function ServiciosSection() {
             </Link>
           </div>
 
-          <div>
-            <h3 className="text-lg font-semibold">
+          <div className="rounded-xl bg-white p-5 sm:p-6">
+            <h3 className="text-lg font-semibold text-earh-blue-900">
               Policonsultorio Uruguay 266
             </h3>
             <p className="mt-1 text-sm text-neutral-700">
-              Consultorios Médicos Uruguay: espacio de atención ambulatoria en
-              Microcentro, con turnos coordinados.
+              Consultorios Médicos Uruguay es el espacio de atención ambulatoria
+              en Microcentro, con turnos coordinados y circuitos definidos.
             </p>
             <ul className="mt-3 space-y-2 text-neutral-700">
               <Bullet>
@@ -119,7 +125,8 @@ export default function ServiciosSection() {
                 entre otras.
               </Bullet>
               <Bullet>
-                Derivación y coordinación de estudios complementarios.
+                Derivación y coordinación de estudios complementarios cuando es
+                necesario.
               </Bullet>
               <Bullet>
                 Ubicación estratégica en Uruguay 266, 1º E, CABA, con fácil
@@ -127,8 +134,8 @@ export default function ServiciosSection() {
               </Bullet>
             </ul>
             <Link
-              href="/cmu"
-              className="mt-4 inline-flex items-center text-sm font-medium text-blue-700 underline-offset-4 hover:underline"
+              href="/consultorios-medicos-uruguay"
+              className="mt-4 inline-flex items-center text-sm font-medium text-earh-blue-700 underline-offset-4 hover:underline"
             >
               Ver más sobre el Policonsultorio
               <span aria-hidden className="ml-1">
@@ -142,9 +149,9 @@ export default function ServiciosSection() {
       {/* COMPARACIÓN DE SERVICIOS */}
       <motion.section
         {...sectionInView}
-        className="rounded-2xl border bg-neutral-50 p-6 sm:p-8"
+        className="rounded-2xl border bg-earh-cream-50 p-6 sm:p-8"
       >
-        <h2 className="mb-4 text-2xl font-semibold text-blue-700">
+        <h2 className="mb-4 text-2xl font-semibold text-earh-blue-900">
           ¿Qué servicio es más adecuado para cada caso?
         </h2>
         <div className="overflow-hidden rounded-xl border bg-white">
@@ -160,21 +167,25 @@ export default function ServiciosSection() {
           <div className="divide-y text-sm text-neutral-700">
             <ComparisonRow
               situation="Persona mayor que requiere ayuda diaria pero puede permanecer en su casa."
-              home="Cuidadores en domicilio, coordinación con profesionales."
-              clinic="Consultas puntuales de control, si el traslado es posible."
+              home="Cuidadores en domicilio, coordinación con profesionales y apoyo a la familia."
+              clinic="Consultas puntuales de control, siempre que el traslado sea posible."
             />
             <ComparisonRow
               situation="Alta hospitalaria reciente con necesidad de seguimiento cercano."
-              home="Plan de cuidados en el hogar y reducción de reinternaciones."
+              home="Plan de cuidados en el hogar y foco en reducir reinternaciones."
               clinic="Controles médicos programados y estudios según indicación."
             />
             <ComparisonRow
               situation="Consulta clínica o por especialidad sin internación."
               home="No suele ser la primera opción."
-              clinic="Turno en consultorio con profesional correspondiente."
+              clinic="Turno en consultorio con el profesional correspondiente."
             />
           </div>
         </div>
+        <p className="mt-3 text-sm text-neutral-700">
+          En muchos casos combinamos ambas modalidades: controles médicos en
+          consultorios e internación domiciliaria para el día a día en el hogar.
+        </p>
       </motion.section>
 
       {/* CÓMO SOLICITAR UN SERVICIO */}
@@ -182,7 +193,7 @@ export default function ServiciosSection() {
         {...sectionInView}
         className="rounded-2xl border bg-white/90 p-6 shadow-sm sm:p-8"
       >
-        <h2 className="mb-4 text-2xl font-semibold text-blue-700">
+        <h2 className="mb-4 text-2xl font-semibold text-earh-blue-900">
           ¿Cómo solicitar un servicio?
         </h2>
         <ol className="space-y-2 list-decimal pl-5 text-neutral-700">
@@ -206,7 +217,7 @@ export default function ServiciosSection() {
         <div className="mt-5 flex flex-wrap gap-3">
           <Link
             href="/contacto"
-            className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+            className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-card transition-colors duration-200 hover:bg-blue-700"
           >
             Completar formulario
           </Link>
@@ -214,7 +225,7 @@ export default function ServiciosSection() {
             href={WHATSAPP_HREF}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-lg border px-4 py-2 text-sm font-medium hover:bg-neutral-50"
+            className="inline-flex items-center gap-2 rounded-lg border border-earh-blue-100 bg-white px-4 py-2 text-sm font-medium text-earh-blue-900 transition-colors duration-200 hover:border-earh-blue-200 hover:bg-earh-blue-50"
           >
             Escribir por WhatsApp
           </a>
@@ -223,7 +234,7 @@ export default function ServiciosSection() {
 
       {/* FAQ */}
       <motion.section {...sectionInView} className="space-y-3">
-        <h2 className="mb-2 text-2xl font-semibold text-blue-700">
+        <h2 className="mb-2 text-2xl font-semibold text-earh-blue-900">
           Preguntas frecuentes sobre los servicios
         </h2>
 
@@ -262,7 +273,7 @@ export default function ServiciosSection() {
         <div className="flex flex-wrap justify-center gap-3">
           <Link
             href="/contacto"
-            className="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700"
+            className="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white shadow-card transition-colors duration-200 hover:bg-blue-700"
           >
             Hacer una consulta
           </Link>
@@ -270,7 +281,7 @@ export default function ServiciosSection() {
             href={WHATSAPP_HREF}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-lg border px-5 py-2.5 text-sm font-medium hover:bg-neutral-50"
+            className="inline-flex items-center gap-2 rounded-lg border border-earh-blue-100 bg-white px-5 py-2.5 text-sm font-medium text-earh-blue-900 transition-colors duration-200 hover:border-earh-blue-200 hover:bg-earh-blue-50"
           >
             Consultar por WhatsApp
           </a>
@@ -286,7 +297,7 @@ function Bullet({ children }: { children: React.ReactNode }) {
   return (
     <li className="flex gap-2">
       <svg
-        className="mt-1 h-4 w-4 shrink-0 text-blue-600"
+        className="mt-1 h-4 w-4 shrink-0 text-earh-blue-600"
         viewBox="0 0 24 24"
         aria-hidden
       >
@@ -306,7 +317,7 @@ function Bullet({ children }: { children: React.ReactNode }) {
 
 function FAQ({ q, a }: { q: string; a: string }) {
   return (
-    <details className="group rounded-xl border bg-white p-4 shadow-sm transition-colors duration-300 open:bg-blue-50 [&_summary::-webkit-details-marker]:hidden">
+    <details className="group rounded-xl border bg-white p-4 shadow-sm transition-colors duration-300 open:bg-earh-cream-50 [&_summary::-webkit-details-marker]:hidden">
       <summary className="flex w-full cursor-pointer items-center justify-between gap-4 text-left">
         <span className="font-medium text-neutral-900">{q}</span>
         <svg
@@ -343,47 +354,77 @@ function BannerCard({
   return (
     <Link
       href={href}
-      className="group relative block w-full overflow-hidden rounded-2xl border shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/30"
+      className="group relative block w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-earh-blue-600/40 focus-visible:ring-offset-2"
       aria-label={title}
     >
-      <div className="relative w-full">
-        <div className="aspect-[3/4] w-full sm:aspect-[3/4]">
-          <Image
-            src={imageSrc}
-            alt={title}
-            fill
-            sizes="100vw"
-            className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05] group-active:scale-[1.02]"
-          />
-        </div>
-        <div
-          className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent transition-opacity duration-300 group-hover:from-black/70 group-hover:via-black/40"
-          aria-hidden
-        />
-        <div className="absolute inset-0 flex items-end p-5 sm:p-8">
-          <div className="text-white">
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-              {title}
-            </h2>
-            <p className="mt-1 max-w-3xl text-sm text-white/90 sm:mt-2 sm:text-base">
-              {body}
-            </p>
-            <div className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-white/95">
-              Ingresar
-              <span
-                aria-hidden
-                className="inline-block translate-x-0 transition-transform duration-200 group-hover:translate-x-0.5"
-              >
-                →
-              </span>
+      <motion.div
+        initial={{ opacity: 0, y: 20, scale: 0.95 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+          delay: 0.1,
+        }}
+      >
+        {/* borde degradado + glow */}
+        <div className="relative rounded-2xl bg-gradient-to-br from-earh-blue-50 via-white to-earh-cream-50 p-[1px] shadow-sm transition-shadow duration-300 group-hover:shadow-card">
+          <motion.article
+            whileHover={{ y: -6, scale: 1.01, rotate: -0.4 }}
+            whileTap={{ scale: 0.99, y: -2 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            className="relative h-full overflow-hidden rounded-2xl bg-black"
+          >
+            {/* imagen */}
+            <div className="relative aspect-[3/4] w-full">
+              <Image
+                src={imageSrc}
+                alt={title}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.08] group-active:scale-[1.03]"
+              />
             </div>
-          </div>
+
+            {/* overlay degradado */}
+            <div
+              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/35 to-transparent transition-opacity duration-300 group-hover:from-black/80 group-hover:via-black/45"
+              aria-hidden
+            />
+
+            {/* badge superior izquierda */}
+            <div className="pointer-events-none absolute left-4 top-4 inline-flex items-center gap-1 rounded-full bg-white/95 px-3 py-1 text-[11px] font-medium text-earh-blue-900 shadow-sm sm:left-5 sm:top-5">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              Ver detalles del servicio
+            </div>
+
+            {/* contenido inferior */}
+            <div className="absolute inset-0 flex items-end p-5 sm:p-7">
+              <div className="text-white">
+                <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
+                  {title}
+                </h2>
+                <p className="mt-1 max-w-3xl text-sm text-white/90 sm:mt-2 sm:text-base">
+                  {body}
+                </p>
+                <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-xs font-medium text-white/95 backdrop-blur-sm sm:mt-4 sm:text-sm">
+                  Ingresar al detalle
+                  <span
+                    aria-hidden
+                    className="inline-block translate-x-0 transition-transform duration-200 group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
+                </div>
+              </div>
+            </div>
+          </motion.article>
         </div>
-      </div>
-      <div
-        className="pointer-events-none absolute inset-0 ring-0 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-lg group-active:translate-y-0"
-        aria-hidden
-      />
+
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 -z-10 scale-95 rounded-3xl bg-gradient-to-r from-emerald-400/12 via-earh-blue-400/10 to-sky-500/12 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100"
+        />
+      </motion.div>
     </Link>
   );
 }
