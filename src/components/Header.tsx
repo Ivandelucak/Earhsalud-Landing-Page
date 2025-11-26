@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navItems = [
   { href: "/", label: "Inicio" },
@@ -39,7 +40,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+      <header className="sticky top-0 z-50 border-b bg-zinc-50/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
           <button
             type="button"
@@ -51,11 +52,15 @@ export default function Header() {
             <Menu className="h-5 w-5" />
           </button>
 
-          <Link
-            href="/"
-            className="flex items-center gap-2 font-semibold tracking-tight text-neutral-900"
-          >
-            <span>Earh Salud</span>
+          <Link href="/" className="shrink-0">
+            <Image
+              src="/imagenes/logo-earh-full.png"
+              alt="Earh Salud"
+              width={190} // podés ajustar a 200, 210, etc si lo querés un toque más grande
+              height={48}
+              className="h-11 w-auto sm:h-12"
+              priority
+            />
           </Link>
 
           <nav className="hidden items-center gap-6 md:flex">

@@ -1,23 +1,44 @@
+/* FILE: src/app/globals.css */
+/* Tailwind v4 */
 @import "tailwindcss";
 
+/* ===========================
+   Base global
+   =========================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --brand-primary: #345c76;
-  --brand-secondary: #689ea9;
-  --brand-accent: #a6c8ce;
-  --brand-soft: #d9ecef;
+  --earh-blue-50: #e4f1f7;
+  --earh-blue-100: #c8dfea;
+  --earh-blue-200: #9fbfd5;
+  --earh-blue-300: #769fbe;
+  --earh-blue-400: #4f80a7;
+  --earh-blue-500: #356890;
+  --earh-blue-600: #25506f; /* ideal para bordes y textos importantes */
+  --earh-blue-700: #1c3e57;
+  --earh-blue-800: #132a3b;
+  --earh-blue-900: #0c1c28;
 }
 
+/* Fuente atada a --font-sans (Source Sans 3) */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(
+    --font-sans,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif
+  );
 }
 
+/* Scroll suave */
 html {
   scroll-behavior: smooth;
 }
+
+/* ===========================
+   Animaciones utilitarias
+   =========================== */
 
 @keyframes marquee {
   0% {
@@ -32,124 +53,13 @@ html {
   animation: marquee 30s linear infinite;
 }
 
+/* ===========================
+   Estilos de contenido del blog
+   =========================== */
+
 .blog-prose hr {
   margin-top: 2rem;
   margin-bottom: 2rem;
   border: 0;
-  border-top: 1px solid rgb(229 231 235);
-}
-
-/* === Brand tokens por “tema” (site vs cmu) === */
-html[data-brand="site"] {
-  --brand-600: #0f6d7a;
-  --brand-500: #178c9b;
-  --brand-400: #21a8b9;
-  --brand-50: #e8f6f8;
-  --navy-700: #0e2d3a;
-  --accent-amber: #f3b94c;
-  --text: #111827;
-  --muted: #4b5563;
-  --border: #e5e7eb;
-  --bg: #ffffff;
-  --bg-soft: #fafafa;
-}
-
-html[data-brand="cmu"] {
-  --brand-600: #0f6d7a;
-  --brand-500: #178c9b;
-  --brand-400: #21a8b9;
-  --brand-50: #e8f6f8;
-  --navy-700: #0e2d3a;
-  --accent-amber: #f3b94c;
-  --text: #0e2d3a;
-  --muted: #374151;
-  --border: #e5e7eb;
-  --bg: #ffffff;
-  --bg-soft: #f8fafb;
-}
-
-/* Base */
-:root {
-  color-scheme: light;
-}
-body {
-  background: var(--bg);
-  color: var(--text);
-}
-
-/* Títulos “display” */
-h1,
-h2,
-h3,
-.heading {
-  font-family: var(--font-display), ui-sans-serif;
-  letter-spacing: -0.01em;
-  color: var(--navy-700);
-}
-
-/* Links */
-a {
-  color: var(--brand-600);
-}
-a:hover {
-  color: var(--brand-500);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-/* Botones utilitarios */
-.btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition;
-}
-.btn-primary {
-  background: var(--brand-600);
-  color: #fff;
-}
-.btn-primary:hover {
-  background: var(--brand-500);
-}
-.btn-outline {
-  @apply border;
-  border-color: var(--brand-600);
-  color: var(--brand-600);
-  background: #fff;
-}
-.btn-outline:hover {
-  background: var(--brand-50);
-}
-
-/* Card */
-.card {
-  @apply rounded-2xl border bg-white shadow-sm;
-  border-color: var(--border);
-  box-shadow: var(--tw-shadow, 0) var(--tw-shadow-colored, 0),
-    0 6px 24px rgba(14, 45, 58, 0.08);
-}
-.card:hover {
-  box-shadow: 0 10px 28px rgba(14, 45, 58, 0.12);
-}
-
-/* Secciones */
-.section {
-  @apply py-12 sm:py-16;
-}
-.section-title {
-  @apply text-2xl sm:text-3xl font-bold mb-4;
-  color: var(--navy-700);
-}
-
-/* Hero suave */
-.hero {
-  background: radial-gradient(
-    1200px 600px at 50% -20%,
-    var(--brand-50),
-    transparent 60%
-  );
-}
-
-/* Divider del contenido del blog */
-.blog-prose hr {
-  margin: 2.25rem 0;
-  border: 0;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgb(229 231 235); /* gris claro */
 }

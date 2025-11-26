@@ -1,6 +1,13 @@
 // FILE: src/app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
+import { Source_Sans_3 } from "next/font/google";
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-source-sans-3",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -28,7 +35,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es-AR" className="scroll-smooth">
-      <body className="min-h-dvh bg-white text-neutral-900 antialiased">
+      <body
+        className={`${sourceSans.variable} min-h-dvh bg-[#F5F7FA] text-neutral-900 antialiased`}
+      >
         {children}
       </body>
     </html>
