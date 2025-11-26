@@ -101,18 +101,18 @@ export default async function BlogPostPage({ params }: { params: Params }) {
 
       {/* Navegación simple */}
       <div className="pt-6 flex flex-wrap gap-3">
-        <a
+        <link
           href="/blog"
-          className="inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm hover:bg-neutral-50"
+          className="in e-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm hover:bg-neutral-50"
         >
           ← Volver al Blog
-        </a>
-        <a
+        </link>
+        <link
           href="/contacto"
           className="inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm hover:bg-neutral-50"
         >
           Hacer una consulta
-        </a>
+        </link>
       </div>
     </article>
   );
