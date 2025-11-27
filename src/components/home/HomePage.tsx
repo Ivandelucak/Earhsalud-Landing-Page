@@ -71,11 +71,29 @@ export default function HomePage() {
       {/* HERO */}
       <motion.header
         {...fadeUp}
-        className="relative overflow-hidden rounded-2xl border bg-gradient-to-br from-earh-blue-50 via-white to-earh-cream-50"
+        className="relative overflow-hidden rounded-2xl border bg-black"
       >
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-10 sm:px-6 sm:py-12 lg:px-8 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
-          <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full border border-earh-blue-100 bg-white/90 px-3 py-1 text-xs font-medium text-earh-blue-900 shadow-sm">
+        {/* Fondo: foto + gradiente para que el texto se lea bien */}
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src="/imagenes/home-hero.jpeg"
+            alt="Profesionales de salud acompañando a una persona mayor en su hogar"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-gradient-to-tr from-earh-blue-900/80 via-earh-blue-900/55 to-black/0"
+          />
+        </div>
+
+        {/* Contenido sobre la imagen */}
+        <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:px-6 sm:py-14 lg:flex-row lg:items-center lg:px-8">
+          {/* Columna texto */}
+          <div className="max-w-xl space-y-4">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/95 px-3 py-1 text-xs font-medium text-earh-blue-900 shadow-sm">
               <Image
                 src="/imagenes/logo-earh-iso.png"
                 alt="Earh Salud"
@@ -85,28 +103,27 @@ export default function HomePage() {
               <span>Earh Salud · Internación domiciliaria</span>
             </div>
 
-            <p className="text-sm font-semibold tracking-wide text-earh-blue-600">
+            <p className="text-xs font-semibold tracking-[0.18em] text-earh-cream-50/90 sm:text-sm">
               INTERNACIÓN DOMICILIARIA EN CABA Y GBA
             </p>
 
-            <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
-              <span className="text-earh-blue-950">
-                Internación domiciliaria con enfoque humano y coordinado
-              </span>
+            <h1 className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-5xl">
+              Internación domiciliaria con enfoque humano y coordinado
             </h1>
 
-            <p className="max-w-xl text-base text-neutral-700 sm:text-lg">
+            <p className="max-w-xl text-sm text-white/90 sm:text-base">
               Earh Salud SRL está compuesta por un grupo interdisciplinario de
               profesionales con alta experiencia en salud. Acompañamos a
               pacientes y familias para continuar los cuidados en el hogar, con
               seguimiento cercano y coordinación integral.
             </p>
 
+            {/* Botones */}
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <button
                 type="button"
                 onClick={() => router.push("/internacion-domiciliaria")}
-                className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-card transition duration-200 hover:bg-blue-700 hover:shadow-cardHover active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 sm:w-auto"
+                className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-card transition duration-200 hover:bg-blue-700 hover:shadow-cardHover active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent sm:w-auto"
               >
                 Internación domiciliaria
               </button>
@@ -114,7 +131,7 @@ export default function HomePage() {
               <button
                 type="button"
                 onClick={() => router.push("/consultorios-medicos-uruguay")}
-                className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg border border-earh-blue-200 bg-white/95 px-5 py-2.5 text-sm font-medium text-earh-blue-900 shadow-sm transition duration-200 hover:border-earh-blue-300 hover:bg-earh-blue-50 hover:shadow-card active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-earh-blue-400 focus-visible:ring-offset-2 sm:w-auto"
+                className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg border border-white/80 bg-white/95 px-5 py-2.5 text-sm font-medium text-earh-blue-900 shadow-sm transition duration-200 hover:border-earh-blue-200 hover:bg-earh-blue-50 hover:shadow-card active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-earh-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent sm:w-auto"
               >
                 Consultorios Médicos Uruguay
               </button>
@@ -123,7 +140,7 @@ export default function HomePage() {
                 href={CONTACT.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-emerald-600/40 bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-emerald-700 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 sm:w-auto"
+                className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-earh-green-600/60 bg-earh-green-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-emerald-700 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent sm:w-auto"
               >
                 <span className="inline-flex h-4 w-4 items-center justify-center">
                   <svg
@@ -139,44 +156,30 @@ export default function HomePage() {
 
               <a
                 href={CONTACT.telHref}
-                className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg border border-blue-600/40 bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-blue-700 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 sm:w-auto"
+                className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg border border-blue-600/60 bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-blue-700 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent sm:w-auto"
               >
                 Llamar
               </a>
             </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="relative w-full"
-          >
-            <div className="relative aspect-[5/4] w-full overflow-hidden rounded-2xl border bg-neutral-100 shadow-sm sm:aspect-[4/3]">
-              <Image
-                src="/imagenes/home-hero.jpeg"
-                alt="Profesionales de salud acompañando a una persona mayor en su hogar"
-                fill
-                sizes="(max-width: 768px) 100vw, 40vw"
-                className="object-cover"
-                priority
-              />
-            </div>
+          {/* espacio vacío para que la imagen “respire” en desktop */}
+          <div className="hidden flex-1 lg:block" />
+        </div>
 
-            <div className="absolute -bottom-4 left-4 hidden overflow-hidden rounded-2xl border border-white/70 bg-white/95 shadow-md sm:flex">
-              <div className="relative h-20 w-24">
-                <Image
-                  src="/imagenes/home-detail-hands.jpeg"
-                  alt="Detalle de acompañamiento en el hogar"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="flex items-center px-3 text-xs text-neutral-800">
-                Cuidadores y equipo de salud coordinando el día a día en casa.
-              </div>
-            </div>
-          </motion.div>
+        {/* Mini card con manos abajo a la derecha */}
+        <div className="pointer-events-none absolute bottom-5 right-5 hidden max-w-xs items-center overflow-hidden rounded-2xl border border-white/80 bg-white/95 shadow-lg sm:flex">
+          <div className="relative h-20 w-24 flex-shrink-0">
+            <Image
+              src="/imagenes/home-detail-hands.jpeg"
+              alt="Detalle de acompañamiento en el hogar"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="px-3 py-2 text-xs text-neutral-800">
+            Cuidadores y equipo de salud coordinando el día a día en casa.
+          </div>
         </div>
       </motion.header>
 
@@ -540,29 +543,67 @@ function ServiceCard({
   return (
     <Link href={href} className="group block h-full cursor-pointer">
       <motion.article
-        whileHover={{ y: -4 }}
-        whileTap={{ scale: 0.97 }}
-        className="flex h-full flex-col rounded-2xl border border-earh-blue-50 bg-cyan-50 p-6 shadow-sm transition-colors duration-200 ease-out hover:border-earh-blue-200 hover:bg-blue-200 hover:shadow-card active:bg-blue-400 sm:p-7"
+        whileHover={{ y: -8, scale: 1.015 }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ duration: 0.25, ease: "easeOut" }}
+        className="
+          relative flex h-full flex-col rounded-2xl
+          border border-earh-blue-300
+          bg-gradient-to-br from-white via-white to-earh-cream-50/80
+          p-6
+          shadow-card
+          transition-all duration-300 ease-out
+          hover:border-earh-blue-500
+          hover:bg-white
+          hover:shadow-cardHover
+          sm:p-7
+        "
       >
-        <h2 className="mb-2 text-xl font-semibold text-earh-blue-900 sm:text-2xl">
-          {title}
-        </h2>
-        <p className="mb-4 text-neutral-700">{body}</p>
-        <ul className="mb-4 space-y-1 list-disc pl-5 text-sm text-neutral-700">
-          {bullets.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
+        {/* Glow exterior */}
+        <div
+          aria-hidden
+          className="
+            pointer-events-none absolute inset-0 -z-10 scale-95
+            rounded-3xl bg-gradient-to-r
+            from-earh-blue-400/25 via-earh-blue-500/15 to-emerald-400/25
+            opacity-0 blur-xl
+            transition-opacity duration-300
+            group-hover:opacity-100
+          "
+        />
 
-        <span className="mt-auto inline-flex items-center text-sm font-medium text-earh-blue-700 transition-colors duration-200 group-hover:text-earh-blue-900">
-          Más información
-          <span
-            aria-hidden
-            className="ml-1 transition-transform duration-200 ease-out group-hover:translate-x-0.5"
-          >
-            →
+        {/* Borde interno suave */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-white/60"
+        />
+
+        {/* Contenido */}
+        <div className="relative flex h-full flex-col">
+          <div className="mb-4 h-2 w-12 rounded-full bg-earh-blue-600/90 transition-all group-hover:w-16 group-hover:bg-earh-blue-700" />
+
+          <h2 className="mb-2 text-xl font-bold text-earh-blue-950 sm:text-2xl">
+            {title}
+          </h2>
+
+          <p className="mb-4 text-sm text-neutral-700 sm:text-base">{body}</p>
+
+          <ul className="mb-4 space-y-1 list-disc pl-5 text-sm text-neutral-700">
+            {bullets.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+
+          <span className="mt-auto inline-flex items-center text-sm font-semibold text-earh-blue-700 transition-all duration-200 group-hover:text-earh-blue-900">
+            Más información
+            <span
+              aria-hidden
+              className="ml-1 transition-transform duration-200 ease-out group-hover:translate-x-1"
+            >
+              →
+            </span>
           </span>
-        </span>
+        </div>
       </motion.article>
     </Link>
   );
