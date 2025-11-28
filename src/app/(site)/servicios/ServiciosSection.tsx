@@ -108,9 +108,9 @@ export default function ServiciosSection() {
             </Link>
           </div>
 
-          <div className="rounded-xl bg-white p-5 sm:p-6">
+          <div className="rounded-xl bg-earh-cream-50/80 p-5 sm:p-6">
             <h3 className="text-lg font-semibold text-earh-blue-900">
-              Policonsultorio Uruguay 266
+              Consultorios Médicos Uruguay
             </h3>
             <p className="mt-1 text-sm text-neutral-700">
               Consultorios Médicos Uruguay es el espacio de atención ambulatoria
@@ -154,16 +154,22 @@ export default function ServiciosSection() {
         <h2 className="mb-4 text-2xl font-semibold text-earh-blue-900">
           ¿Qué servicio es más adecuado para cada caso?
         </h2>
-        <div className="overflow-hidden rounded-xl border bg-white">
-          <div className="grid text-sm font-semibold text-neutral-900 sm:grid-cols-3">
-            <div className="border-b px-4 py-3 sm:border-b-0 sm:border-r">
+
+        <div className="overflow-hidden rounded-2xl border bg-white shadow-sm">
+          {/* Header (solo desktop/tablet) */}
+          <div className="hidden bg-earh-blue-50/80 text-xs font-semibold text-earh-blue-900 sm:grid sm:grid-cols-[1.2fr_1fr_1fr]">
+            <div className="border-r px-4 py-3 uppercase tracking-wide">
               Situación
             </div>
-            <div className="border-b px-4 py-3 sm:border-b-0 sm:border-r">
+            <div className="border-r px-4 py-3 uppercase tracking-wide">
               Internación domiciliaria
             </div>
-            <div className="px-4 py-3">Policonsultorio Uruguay 266</div>
+            <div className="px-4 py-3 uppercase tracking-wide">
+              Consultorios Médicos Uruguay
+            </div>
           </div>
+
+          {/* Filas */}
           <div className="divide-y text-sm text-neutral-700">
             <ComparisonRow
               situation="Persona mayor que requiere ayuda diaria pero puede permanecer en su casa."
@@ -182,6 +188,7 @@ export default function ServiciosSection() {
             />
           </div>
         </div>
+
         <p className="mt-3 text-sm text-neutral-700">
           En muchos casos combinamos ambas modalidades: controles médicos en
           consultorios e internación domiciliaria para el día a día en el hogar.
@@ -191,44 +198,114 @@ export default function ServiciosSection() {
       {/* CÓMO SOLICITAR UN SERVICIO */}
       <motion.section
         {...sectionInView}
-        className="rounded-2xl border bg-white/90 p-6 shadow-sm sm:p-8"
+        className="rounded-2xl border bg-white/95 p-6 shadow-sm sm:p-8"
       >
-        <h2 className="mb-4 text-2xl font-semibold text-earh-blue-900">
+        <p className="text-xs font-semibold tracking-wide text-earh-blue-600">
+          PASOS PARA EMPEZAR
+        </p>
+        <h2 className="mt-1 mb-4 text-2xl font-semibold text-earh-blue-900">
           ¿Cómo solicitar un servicio?
         </h2>
-        <ol className="space-y-2 list-decimal pl-5 text-neutral-700">
-          <li>
-            Indicanos si la consulta es por{" "}
-            <strong>internación domiciliaria</strong> o{" "}
-            <strong>Policonsultorio</strong>.
-          </li>
-          <li>
-            Contanos brevemente la situación clínica y la zona de residencia.
-          </li>
-          <li>
-            Te proponemos alternativas de turnos o modalidades de atención y
-            coordinamos el circuito.
-          </li>
-        </ol>
-        <p className="mt-3 text-sm text-neutral-600">
-          Cuanta más información inicial tengamos, más fácil es definir el
-          circuito adecuado para cada caso.
-        </p>
-        <div className="mt-5 flex flex-wrap gap-3">
-          <Link
-            href="/contacto"
-            className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-card transition-colors duration-200 hover:bg-blue-700"
-          >
-            Completar formulario
-          </Link>
-          <a
-            href={WHATSAPP_HREF}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-earh-blue-100 bg-white px-4 py-2 text-sm font-medium text-earh-blue-900 transition-colors duration-200 hover:border-earh-blue-200 hover:bg-earh-blue-50"
-          >
-            Escribir por WhatsApp
-          </a>
+
+        <div className="grid gap-6 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+          {/* Pasos */}
+          <div>
+            <ol className="space-y-3">
+              <li className="flex gap-3">
+                <div className="mt-1 flex h-7 w-7 items-center justify-center rounded-full bg-earh-blue-50 text-xs font-semibold text-earh-blue-700 ring-1 ring-earh-blue-100">
+                  1
+                </div>
+                <div className="space-y-1 text-sm text-neutral-700">
+                  <p className="font-semibold text-earh-blue-900">
+                    Indicá el tipo de consulta
+                  </p>
+                  <p>
+                    Contanos si se trata de{" "}
+                    <strong>internación domiciliaria</strong> o para{" "}
+                    <strong>consultorios médicos uruguay</strong>.
+                  </p>
+                </div>
+              </li>
+
+              <li className="flex gap-3">
+                <div className="mt-1 flex h-7 w-7 items-center justify-center rounded-full bg-earh-blue-50 text-xs font-semibold text-earh-blue-700 ring-1 ring-earh-blue-100">
+                  2
+                </div>
+                <div className="space-y-1 text-sm text-neutral-700">
+                  <p className="font-semibold text-earh-blue-900">
+                    Describí la situación
+                  </p>
+                  <p>
+                    Comentanos brevemente la <strong>situación clínica</strong>{" "}
+                    y la <strong>zona de residencia</strong> de la persona.
+                  </p>
+                </div>
+              </li>
+
+              <li className="flex gap-3">
+                <div className="mt-1 flex h-7 w-7 items-center justify-center rounded-full bg-earh-blue-50 text-xs font-semibold text-earh-blue-700 ring-1 ring-earh-blue-100">
+                  3
+                </div>
+                <div className="space-y-1 text-sm text-neutral-700">
+                  <p className="font-semibold text-earh-blue-900">
+                    Coordinamos el circuito
+                  </p>
+                  <p>
+                    Te proponemos opciones de <strong>turnos</strong> o{" "}
+                    <strong>modalidades de atención</strong> y coordinamos el
+                    circuito más adecuado para el caso.
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <p className="mt-3 text-xs sm:text-sm text-neutral-600">
+              Cuanta más información inicial tengamos, más fácil es definir un
+              circuito claro y posible para la familia.
+            </p>
+          </div>
+
+          {/* CTA lateral */}
+          <div className="rounded-2xl border border-earh-blue-50 bg-earh-cream-50/70 p-4 shadow-sm sm:p-5">
+            <p className="text-sm font-semibold text-earh-blue-900">
+              Podés empezar ahora mismo
+            </p>
+            <p className="mt-1 text-xs sm:text-sm text-neutral-700">
+              En un primer contacto no hace falta tener todos los datos
+              clínicos: con una descripción general ya podemos orientarte.
+            </p>
+
+            <div className="mt-4 flex flex-wrap gap-3">
+              <Link
+                href="/contacto"
+                className="inline-flex flex-1 items-center justify-center rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-card transition-colors duration-200 hover:bg-blue-700 sm:flex-none"
+              >
+                Completar formulario
+              </Link>
+              <a
+                href={WHATSAPP_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border border-earh-green-600/50 bg-white px-4 py-2 text-sm font-medium text-earh-blue-900 transition-colors duration-200 hover:bg-earh-green-100 sm:flex-none"
+              >
+                <span className="inline-flex h-4 w-4 items-center justify-center">
+                  <svg
+                    viewBox="0 0 32 32"
+                    aria-hidden="true"
+                    className="h-4 w-4 fill-earh-green-600"
+                  >
+                    <path d="M16 3C9.373 3 4 8.373 4 15c0 2.253.62 4.366 1.8 6.22L4 29l7.013-1.786A12.02 12.02 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 2c5.514 0 10 4.486 10 10s-4.486 10-10 10a9.96 9.96 0 0 1-4.992-1.35l-.357-.21-4.154 1.06 1.11-4.05-.23-.373A9.94 9.94 0 0 1 6 15C6 9.486 10.486 5 16 5zm-3.07 4.5c-.256 0-.67.097-.985.485-.316.389-1.294 1.264-1.294 3.084 0 1.82 1.326 3.58 1.511 3.826.186.246 2.54 4.06 6.108 5.528 3.02 1.238 3.64.991 4.296.93.656-.062 2.12-.867 2.417-1.705.297-.838.297-1.555.211-1.705-.086-.149-.316-.238-.66-.416-.344-.178-2.03-1.003-2.344-1.118-.313-.116-.542-.178-.772.178-.23.356-.888 1.118-1.089 1.347-.201.23-.401.259-.745.081-.344-.178-1.45-.534-2.763-1.702-1.021-.91-1.71-2.034-1.911-2.389-.201-.356-.021-.548.152-.726.156-.155.344-.402.516-.604.172-.202.23-.345.344-.575.115-.23.058-.431-.029-.604-.086-.173-.758-1.86-1.073-2.545-.282-.613-.573-.63-.829-.63z" />
+                  </svg>
+                </span>
+                Escribir por WhatsApp
+              </a>
+            </div>
+
+            <p className="mt-3 text-xs text-neutral-500">
+              Suelen responder dentro del mismo día hábil, según la demanda del
+              momento.
+            </p>
+          </div>
         </div>
       </motion.section>
 
@@ -281,7 +358,7 @@ export default function ServiciosSection() {
             href={WHATSAPP_HREF}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-earh-blue-100 bg-white px-5 py-2.5 text-sm font-medium text-earh-blue-900 transition-colors duration-200 hover:border-earh-blue-200 hover:bg-earh-blue-50"
+            className="inline-flex items-center gap-2 rounded-lg border border-earh-blue-100 bg-green-500 px-5 py-2.5 text-sm font-medium text-earh-blue-900 transition-colors duration-200 hover:border-earh-blue-200 hover:bg-earh-blue-50"
           >
             Consultar por WhatsApp
           </a>
@@ -439,14 +516,33 @@ function ComparisonRow({
   clinic: string;
 }) {
   return (
-    <div className="grid gap-0 border-t text-sm sm:grid-cols-3">
+    <div className="grid gap-0 bg-white text-sm sm:grid-cols-[1.2fr_1fr_1fr]">
+      {/* Situación */}
       <div className="border-b px-4 py-3 text-neutral-800 sm:border-b-0 sm:border-r">
-        {situation}
+        {/* Label solo en mobile */}
+        <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-earh-blue-700 sm:hidden">
+          Situación
+        </p>
+        <p>{situation}</p>
       </div>
+
+      {/* Internación domiciliaria */}
       <div className="border-b px-4 py-3 text-neutral-700 sm:border-b-0 sm:border-r">
-        {home}
+        {/* Label solo en mobile */}
+        <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-earh-blue-700 sm:hidden">
+          Internación domiciliaria
+        </p>
+        <p>{home}</p>
       </div>
-      <div className="px-4 py-3 text-neutral-700">{clinic}</div>
+
+      {/* Policonsultorio */}
+      <div className="px-4 py-3 text-neutral-700">
+        {/* Label solo en mobile */}
+        <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-earh-blue-700 sm:hidden">
+          Policonsultorio Uruguay 266
+        </p>
+        <p>{clinic}</p>
+      </div>
     </div>
   );
 }
