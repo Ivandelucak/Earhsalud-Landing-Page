@@ -1,3 +1,4 @@
+// FILE: src/app/(cmu)/consultorios-medicos-uruguay/GalleryCmu.tsx
 export default function GalleryCmu() {
   const items = [
     {
@@ -16,7 +17,7 @@ export default function GalleryCmu() {
 
   return (
     <section className="rounded-2xl border bg-white/90 p-6 shadow-sm sm:p-8">
-      <h2 className="mb-3 text-2xl font-semibold text-blue-700">
+      <h2 className="mb-3 text-2xl font-semibold text-earh-blue-700">
         Conocé el espacio
       </h2>
       <p className="mb-5 max-w-3xl text-neutral-700">

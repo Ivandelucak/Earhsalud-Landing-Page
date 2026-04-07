@@ -1,3 +1,4 @@
+// FILE: src/components/internacion/InternacionDomiciliariaPage.tsx
 "use client";
 
 import Link from "next/link";
@@ -28,12 +29,10 @@ const sectionInView = {
 export default function InternacionDomiciliariaPage() {
   return (
     <section className="space-y-16">
-      {/* HERO – PROMESA + CTA */}
       <motion.header
         {...heroAnim}
         className="relative overflow-hidden rounded-2xl border bg-black"
       >
-        {/* Video de fondo */}
         <video
           className="absolute inset-0 h-full w-full object-cover"
           src="/videos/internacion-hero.mp4"
@@ -44,10 +43,8 @@ export default function InternacionDomiciliariaPage() {
           poster="/imagenes/internacion-hero-poster.jpg"
         />
 
-        {/* Capa de degradado para legibilidad */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/55 to-black/60" />
 
-        {/* Contenido */}
         <div className="relative mx-auto flex max-w-6xl flex-col gap-8 px-4 py-10 sm:px-6 sm:py-14 lg:px-8 md:flex-row md:items-center">
           <div className="max-w-xl space-y-4 text-white">
             <div className="inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-emerald-200 shadow-sm ring-1 ring-white/15">
@@ -67,7 +64,6 @@ export default function InternacionDomiciliariaPage() {
               recuperación y el bienestar emocional.
             </p>
 
-            {/* Mini beneficios rápidos */}
             <div className="grid gap-3 text-xs text-white/90 sm:grid-cols-3 sm:text-sm">
               <div className="rounded-lg bg-white/5 px-3 py-2 ring-1 ring-white/10">
                 <p className="font-semibold">Menos infecciones</p>
@@ -89,7 +85,6 @@ export default function InternacionDomiciliariaPage() {
               </div>
             </div>
 
-            {/* CTA botones */}
             <div className="mt-2 flex flex-wrap gap-3">
               <a
                 href={CONTACT.whatsappHref}
@@ -129,12 +124,10 @@ export default function InternacionDomiciliariaPage() {
             </p>
           </div>
 
-          {/* Columna vacía para que el texto no ocupe todo el ancho en desktop */}
           <div className="hidden flex-1 md:block" />
         </div>
       </motion.header>
 
-      {/* POR QUÉ CREAMOS ESTE SERVICIO (texto del cliente + cita) */}
       <motion.section
         {...sectionInView}
         className="grid gap-6 rounded-2xl border bg-white/95 p-6 shadow-sm sm:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] sm:p-8"
@@ -201,7 +194,6 @@ export default function InternacionDomiciliariaPage() {
         </aside>
       </motion.section>
 
-      {/* QUÉ RESUELVE / BENEFICIOS CLAVE */}
       <motion.section
         {...sectionInView}
         className="rounded-2xl border bg-white/90 p-6 shadow-sm sm:p-8"
@@ -231,7 +223,6 @@ export default function InternacionDomiciliariaPage() {
         </div>
       </motion.section>
 
-      {/* PARA QUIÉN ESTÁ PENSADA */}
       <motion.section
         {...sectionInView}
         className="rounded-2xl border bg-earh-cream-50 p-6 sm:p-8"
@@ -271,7 +262,6 @@ export default function InternacionDomiciliariaPage() {
         </div>
       </motion.section>
 
-      {/* QUÉ INCLUYE EL SERVICIO */}
       <motion.section
         {...sectionInView}
         className="rounded-2xl border bg-white/90 p-6 shadow-sm sm:p-8"
@@ -310,7 +300,7 @@ export default function InternacionDomiciliariaPage() {
 
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border bg-neutral-100 shadow-sm">
             <Image
-              src="imagenes\internacion-equipo.jpeg"
+              src="/imagenes/internacion-equipo.jpeg"
               alt="Equipo coordinando cuidados de internación domiciliaria en el hogar"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
@@ -320,13 +310,11 @@ export default function InternacionDomiciliariaPage() {
         </div>
       </motion.section>
 
-      {/* GUÍA DE CUIDADOS EN EL HOGAR */}
       <motion.section
         {...sectionInView}
         className="rounded-2xl border bg-earh-cream-50 p-6 sm:p-8"
       >
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
-          {/* Columna izquierda: guía + tips */}
           <div>
             <h2 className="mb-3 text-2xl font-semibold text-earh-blue-900">
               Guía breve de cuidados de adultos mayores en el hogar
@@ -359,7 +347,6 @@ export default function InternacionDomiciliariaPage() {
             </div>
           </div>
 
-          {/* Columna derecha: señales + CTA emocional */}
           <div className="rounded-2xl border border-earh-blue-50 bg-white/90 p-5 shadow-sm">
             <h3 className="mb-2 text-sm font-semibold text-earh-blue-900">
               Señales de que puede ser momento de pedir ayuda
@@ -410,7 +397,6 @@ export default function InternacionDomiciliariaPage() {
         </div>
       </motion.section>
 
-      {/* CÓMO TRABAJAMOS – PASOS */}
       <motion.section
         {...sectionInView}
         id="como-trabajamos"
@@ -439,7 +425,6 @@ export default function InternacionDomiciliariaPage() {
         </ol>
       </motion.section>
 
-      {/* FAMILIA + COBERTURAS */}
       <motion.section
         {...sectionInView}
         className="rounded-2xl border bg-white/90 p-6 shadow-sm sm:p-8"
@@ -471,7 +456,6 @@ export default function InternacionDomiciliariaPage() {
         </div>
       </motion.section>
 
-      {/* TESTIMONIOS / PRUEBA SOCIAL */}
       <motion.section
         {...sectionInView}
         className="rounded-2xl border bg-white/90 p-6 sm:p-8"
@@ -481,19 +465,18 @@ export default function InternacionDomiciliariaPage() {
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">
           <Testimonial>
-            “Gracias al equipo, mi mamá pudo quedarse en casa con una atención
+            Gracias al equipo, mi mamá pudo quedarse en casa con una atención
             muy humana. Nos explicaron cada paso y siempre hubo alguien
-            disponible para responder dudas.”
+            disponible para responder dudas.
           </Testimonial>
           <Testimonial>
-            “Notamos una gran diferencia en el ánimo de nuestro familiar al
-            estar en su entorno, sin internaciones prolongadas. El
-            acompañamiento fue claro y ordenado.”
+            Notamos una gran diferencia en el ánimo de nuestro familiar al estar
+            en su entorno, sin internaciones prolongadas. El acompañamiento fue
+            claro y ordenado.
           </Testimonial>
         </div>
       </motion.section>
 
-      {/* FAQ */}
       <motion.section
         {...sectionInView}
         className="space-y-3 rounded-2xl border bg-white/90 p-6 sm:p-8"
@@ -519,7 +502,6 @@ export default function InternacionDomiciliariaPage() {
         />
       </motion.section>
 
-      {/* CTA FINAL */}
       <motion.section
         {...sectionInView}
         className="rounded-2xl border bg-white/90 p-6 text-center sm:p-8"
@@ -537,7 +519,7 @@ export default function InternacionDomiciliariaPage() {
             href={CONTACT.whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white shadow-card transition-colors duration-200 hover:bg-blue-700"
+            className="rounded-lg bg-emerald-500 px-5 py-2.5 text-sm font-medium text-white shadow-card transition-colors duration-200 hover:bg-emerald-600"
           >
             Escribir por WhatsApp
           </a>
@@ -556,8 +538,6 @@ export default function InternacionDomiciliariaPage() {
     </section>
   );
 }
-
-/* AUXILIARES */
 
 function StatChip({ label, value }: { label: string; value: string }) {
   return (
@@ -589,7 +569,7 @@ function HighlightCard({
 function Step({ n, text }: { n: number; text: string }) {
   return (
     <li className="rounded-xl border bg-white p-5 shadow-sm">
-      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-sm font-semibold text-white">
+      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-earh-blue-600 text-sm font-semibold text-white">
         {n}
       </span>
       <p className="mt-3 text-sm text-neutral-700">{text}</p>
@@ -647,7 +627,7 @@ function FAQ({ q, a }: { q: string; a: string }) {
 function Testimonial({ children }: { children: React.ReactNode }) {
   return (
     <figure className="flex h-full flex-col justify-between rounded-2xl border border-earh-blue-50 bg-earh-cream-50/80 p-4 text-sm text-neutral-800 shadow-sm sm:p-5">
-      <p className="italic">“{children}”</p>
+      <p className="italic">{children}</p>
     </figure>
   );
 }

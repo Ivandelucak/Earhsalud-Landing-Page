@@ -1,3 +1,4 @@
+// FILE: src/components/Header.tsx
 "use client";
 
 import Link from "next/link";
@@ -56,7 +57,7 @@ export default function Header() {
             <Image
               src="/imagenes/logo-earh-full.png"
               alt="Earh Salud"
-              width={190} // podés ajustar a 200, 210, etc si lo querés un toque más grande
+              width={190}
               height={48}
               className="h-11 w-auto sm:h-12"
               priority
@@ -72,8 +73,8 @@ export default function Header() {
                   href={href}
                   className={`text-sm underline-offset-4 transition ${
                     active
-                      ? "font-semibold text-blue-700"
-                      : "text-neutral-600 hover:text-blue-700 hover:underline"
+                      ? "font-semibold text-earh-blue-700"
+                      : "text-neutral-600 hover:text-earh-blue-700 hover:underline"
                   }`}
                 >
                   {label}
@@ -84,7 +85,7 @@ export default function Header() {
 
           <Link
             href="/contacto"
-            className="inline-flex items-center rounded-lg bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700"
+            className="inline-flex items-center rounded-lg bg-earh-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-earh-blue-700"
           >
             Solicitar cotización
           </Link>

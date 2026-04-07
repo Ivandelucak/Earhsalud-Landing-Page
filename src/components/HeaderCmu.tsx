@@ -1,3 +1,4 @@
+// FILE: src/components/HeaderCmu.tsx
 "use client";
 
 import Link from "next/link";
@@ -47,10 +48,10 @@ export default function HeaderCmu() {
           </button>
 
           <Link
-            href="/cmu/clinica-privada"
+            href="/consultorios-medicos-uruguay"
             className="flex items-center gap-2 font-semibold tracking-tight text-neutral-900"
           >
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-700 text-xs font-semibold text-white">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-earh-blue-700 text-xs font-semibold text-white">
               CMU
             </div>
             <div className="flex flex-col leading-tight">
@@ -70,8 +71,8 @@ export default function HeaderCmu() {
                   href={href}
                   className={`text-sm transition ${
                     active
-                      ? "font-semibold text-blue-700"
-                      : "text-neutral-600 hover:text-blue-700"
+                      ? "font-semibold text-earh-blue-700"
+                      : "text-neutral-600 hover:text-earh-blue-700"
                   }`}
                 >
                   {label}
@@ -83,13 +84,13 @@ export default function HeaderCmu() {
           <div className="ml-auto hidden items-center gap-3 md:flex">
             <Link
               href="/"
-              className="rounded-lg border px-3 py-1.5 text-sm font-medium text-neutral-700 hover:border-blue-500 hover:text-blue-600"
+              className="rounded-lg border px-3 py-1.5 text-sm font-medium text-neutral-700 hover:border-earh-blue-500 hover:text-earh-blue-600"
             >
               Earh Salud
             </Link>
             <Link
               href="/contacto"
-              className="inline-flex items-center rounded-lg bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700"
+              className="inline-flex items-center rounded-lg bg-earh-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-earh-blue-700"
             >
               Turnos
             </Link>
@@ -137,7 +138,7 @@ export default function HeaderCmu() {
                 onClick={() => setOpen(false)}
                 className={`block rounded-md px-3 py-2 text-sm ${
                   active
-                    ? "bg-blue-50 font-semibold text-blue-700"
+                    ? "bg-earh-blue-50 font-semibold text-earh-blue-700"
                     : "text-neutral-700 hover:bg-neutral-50"
                 }`}
               >
@@ -157,7 +158,7 @@ export default function HeaderCmu() {
             <Link
               href="/contacto"
               onClick={() => setOpen(false)}
-              className="block rounded-md bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700"
+              className="block rounded-md bg-earh-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-earh-blue-700"
             >
               Turnos
             </Link>

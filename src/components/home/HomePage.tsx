@@ -68,12 +68,10 @@ export default function HomePage() {
   const router = useRouter();
   return (
     <section className="space-y-14 sm:space-y-20">
-      {/* HERO */}
       <motion.header
         {...fadeUp}
         className="relative overflow-hidden rounded-2xl border bg-black"
       >
-        {/* Fondo: foto + gradiente para que el texto se lea bien */}
         <div className="pointer-events-none absolute inset-0">
           <Image
             src="/imagenes/home-hero.jpeg"
@@ -89,9 +87,7 @@ export default function HomePage() {
           />
         </div>
 
-        {/* Contenido sobre la imagen */}
         <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:px-6 sm:py-14 lg:flex-row lg:items-center lg:px-8">
-          {/* Columna texto */}
           <div className="max-w-xl space-y-4">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/95 px-3 py-1 text-xs font-medium text-earh-blue-900 shadow-sm">
               <Image
@@ -118,12 +114,11 @@ export default function HomePage() {
               seguimiento cercano y coordinación integral.
             </p>
 
-            {/* Botones */}
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <button
                 type="button"
                 onClick={() => router.push("/internacion-domiciliaria")}
-                className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-card transition duration-200 hover:bg-blue-700 hover:shadow-cardHover active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent sm:w-auto"
+                className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg bg-earh-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-card transition duration-200 hover:bg-earh-blue-700 hover:shadow-cardHover active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-earh-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent sm:w-auto"
               >
                 Internación domiciliaria
               </button>
@@ -140,7 +135,7 @@ export default function HomePage() {
                 href={CONTACT.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-earh-green-600/60 bg-earh-green-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-emerald-700 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent sm:w-auto"
+                className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-earh-green-600/60 bg-earh-green-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-earh-green-600/90 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-earh-green-600 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent sm:w-auto"
               >
                 <span className="inline-flex h-4 w-4 items-center justify-center">
                   <svg
@@ -156,18 +151,16 @@ export default function HomePage() {
 
               <a
                 href={CONTACT.telHref}
-                className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg border border-blue-600/60 bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-blue-700 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent sm:w-auto"
+                className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg border border-earh-blue-600/60 bg-earh-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-earh-blue-700 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-earh-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent sm:w-auto"
               >
                 Llamar
               </a>
             </div>
           </div>
 
-          {/* espacio vacío para que la imagen “respire” en desktop */}
           <div className="hidden flex-1 lg:block" />
         </div>
 
-        {/* Mini card con manos abajo a la derecha */}
         <div className="pointer-events-none absolute bottom-5 right-5 hidden max-w-xs items-center overflow-hidden rounded-2xl border border-white/80 bg-white/95 shadow-lg sm:flex">
           <div className="relative h-20 w-24 flex-shrink-0">
             <Image
@@ -183,7 +176,6 @@ export default function HomePage() {
         </div>
       </motion.header>
 
-      {/* QUIÉNES SOMOS + STATS */}
       <motion.section
         {...fadeUp}
         className="mx-auto grid max-w-6xl items-start gap-10 md:grid-cols-[minmax(0,1.5fr)_minmax(0,1.1fr)]"
@@ -210,7 +202,6 @@ export default function HomePage() {
           </p>
 
           <div className="mt-4 grid gap-4 rounded-2xl bg-white/80 p-5 sm:grid-cols-2 border border-earh-blue-100 shadow-sm">
-            {/* ITEM 1 */}
             <div className="flex gap-3">
               <svg
                 className="h-6 w-6 text-earh-blue-700 flex-shrink-0 mt-1"
@@ -233,7 +224,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* ITEM 2 */}
             <div className="flex gap-3">
               <svg
                 className="h-6 w-6 text-earh-blue-700 flex-shrink-0 mt-1"
@@ -318,7 +308,6 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* SERVICIOS PRINCIPALES */}
       <motion.section
         {...fadeUp}
         className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2"
@@ -351,7 +340,6 @@ export default function HomePage() {
         />
       </motion.section>
 
-      {/* DÓNDE / CÓMO TRABAJAMOS */}
       <motion.section
         {...fadeUp}
         className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2"
@@ -394,7 +382,6 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* POR QUÉ ELEGIR EARH SALUD */}
       <motion.section
         {...fadeUp}
         className="mx-auto max-w-6xl rounded-2xl border bg-white p-6 shadow-sm sm:p-8"
@@ -435,7 +422,6 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* OBRAS SOCIALES (ejemplo) */}
       <motion.section {...fadeUp} className="mx-auto max-w-6xl space-y-6 py-10">
         <h2 className="text-center text-2xl font-bold text-earh-blue-900">
           Obras sociales y prepagas (ejemplo)
@@ -446,13 +432,12 @@ export default function HomePage() {
             <LogosStrip ariaHidden />
           </div>
         </div>
-        <p className="text-center text-xs text-earh-gray-500">
+        <p className="text-center text-xs text-neutral-500">
           Los logos se muestran a modo de ejemplo visual. La cobertura real se
           confirma en cada caso.
         </p>
       </motion.section>
 
-      {/* TESTIMONIOS */}
       <motion.section
         {...fadeUp}
         className="mx-auto max-w-6xl rounded-2xl border bg-earh-cream-50 p-6 shadow-sm sm:p-8"
@@ -463,7 +448,6 @@ export default function HomePage() {
         <TestimonialsCarousel />
       </motion.section>
 
-      {/* FAQ */}
       <motion.section
         {...fadeUp}
         className="mx-auto max-w-6xl space-y-3 rounded-2xl border bg-white p-6 shadow-sm sm:p-8"
@@ -489,7 +473,6 @@ export default function HomePage() {
         />
       </motion.section>
 
-      {/* CTA FINAL */}
       <motion.section
         {...fadeUp}
         className="mx-auto max-w-6xl rounded-2xl border bg-white p-6 text-center shadow-sm sm:p-8"
@@ -505,7 +488,7 @@ export default function HomePage() {
         <div className="flex flex-wrap justify-center gap-3">
           <Link
             href="/contacto"
-            className="w-full rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-card transition hover:bg-blue-700 hover:shadow-cardHover sm:w-auto"
+            className="w-full rounded-lg bg-earh-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-card transition hover:bg-earh-blue-700 hover:shadow-cardHover sm:w-auto"
           >
             Completar formulario
           </Link>
@@ -513,7 +496,7 @@ export default function HomePage() {
             href={CONTACT.whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full rounded-lg border border-emerald-600/40 bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700 sm:w-auto"
+            className="w-full rounded-lg border border-earh-green-600/40 bg-earh-green-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-earh-green-600/90 sm:w-auto"
           >
             Escribir por WhatsApp
           </a>
@@ -559,7 +542,6 @@ function ServiceCard({
           sm:p-7
         "
       >
-        {/* Glow exterior */}
         <div
           aria-hidden
           className="
@@ -572,17 +554,15 @@ function ServiceCard({
           "
         />
 
-        {/* Borde interno suave */}
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-white/60"
         />
 
-        {/* Contenido */}
         <div className="relative flex h-full flex-col">
           <div className="mb-4 h-2 w-12 rounded-full bg-earh-blue-600/90 transition-all group-hover:w-16 group-hover:bg-earh-blue-700" />
 
-          <h2 className="mb-2 text-xl font-bold text-earh-blue-950 sm:text-2xl">
+          <h2 className="mb-2 text-xl font-bold text-earh-blue-900 sm:text-2xl">
             {title}
           </h2>
 

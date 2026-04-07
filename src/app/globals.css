@@ -27,10 +27,10 @@
   --color-earh-cream-50: #fff9f3;
 }
 
-/* Fuente atada a --font-sans (Source Sans 3) */
+/* Fuente principal: Source Sans 3 */
 body {
   font-family: var(
-    --font-sans,
+    --font-source-sans-3,
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
