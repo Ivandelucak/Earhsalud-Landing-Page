@@ -412,7 +412,7 @@ export default function AsistenciaDomiciliariaPage() {
         <div className="grid gap-8 sm:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] sm:items-center">
           <div>
             <h2 className="mb-3 text-2xl font-semibold text-earh-blue-900">
-              Qué diferencia a la asistencia domiciliaria de una internación
+              En qué se diferencia la asistencia domiciliaria de una internación
               domiciliaria
             </h2>
             <p className="mb-3 text-sm text-neutral-700 sm:text-base">
