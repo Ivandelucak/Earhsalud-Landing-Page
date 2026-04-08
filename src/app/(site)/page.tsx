@@ -4,22 +4,36 @@ import Script from "next/script";
 import HomePage from "@/components/home/HomePage";
 
 export const metadata: Metadata = {
-  title: "Earh Salud – Internación domiciliaria en CABA y GBA",
+  title: "Internación y Asistencia Domiciliaria en CABA y GBA | Earh Salud",
+
   description:
-    "Earh Salud ofrece internación domiciliaria y coordinación de servicios de salud con enfoque humano en CABA y Gran Buenos Aires.",
+    "Earh Salud brinda internación domiciliaria, asistencia domiciliaria, y cuidadores a domicilio en CABA y Gran Buenos Aires. Atención profesional, rápida y coordinada.",
+
   keywords: [
     "internación domiciliaria",
-    "cuidadores a domicilio",
+    "asistencia domiciliaria",
     "enfermería a domicilio",
+    "prestaciones de salud a domicilio",
+    "servicios médicos domiciliarios",
+    "cuidadores a domicilio",
+    "atención médica en casa",
     "cuidado de adultos mayores",
     "internación domiciliaria CABA",
-    "internación domiciliaria GBA",
+    "internación domiciliaria Buenos Aires",
     "servicios de salud en el hogar",
+    "consultorios en microcentro",
+    "consultorios privados CABA",
+    "medicos en capital",
   ],
+
   openGraph: {
-    title: "Earh Salud – Internación domiciliaria en CABA y GBA",
+    title: "Internación y Asistencia Domiciliaria en Buenos Aires | Earh Salud",
     description:
-      "Grupo interdisciplinario de profesionales de la salud que ofrece internación domiciliaria y servicios vinculados en CABA y Gran Buenos Aires.",
+      "Servicios de salud en domicilio: internación, asistencia, enfermería, kinesiología y cuidadores en CABA y GBA.",
+    url: "https://earhsalud.com", // ajustá si cambia
+    siteName: "Earh Salud",
+    locale: "es_AR",
+    type: "website",
   },
 };
 
@@ -33,8 +47,10 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "MedicalOrganization",
   name: "Earh Salud SRL",
+  url: "https://earhsalud.com",
   telephone: EARH_CONTACT.tel,
   email: EARH_CONTACT.emailInternacion,
+
   address: {
     "@type": "PostalAddress",
     streetAddress: "Uruguay 266 1º E",
@@ -42,8 +58,37 @@ const jsonLd = {
     addressRegion: "Buenos Aires",
     addressCountry: "AR",
   },
+
   areaServed: ["CABA", "Gran Buenos Aires"],
-  medicalSpecialty: ["PrimaryCare", "Geriatric"],
+
+  medicalSpecialty: ["PrimaryCare", "Geriatric", "Nursing", "Physiotherapy"],
+
+  description:
+    "Servicios de internación domiciliaria, asistencia domiciliaria, enfermería, kinesiología y cuidadores en CABA y Gran Buenos Aires.",
+
+  availableService: [
+    {
+      "@type": "MedicalTherapy",
+      name: "Internación domiciliaria",
+    },
+    {
+      "@type": "MedicalTherapy",
+      name: "Asistencia domiciliaria",
+    },
+    {
+      "@type": "MedicalTherapy",
+      name: "Enfermería a domicilio",
+    },
+    {
+      "@type": "MedicalTherapy",
+      name: "Kinesiología a domicilio",
+    },
+    {
+      "@type": "MedicalTherapy",
+      name: "Cuidado de adultos mayores",
+    },
+  ],
+
   department: [
     {
       "@type": "MedicalClinic",

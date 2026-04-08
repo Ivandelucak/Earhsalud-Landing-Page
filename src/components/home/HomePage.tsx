@@ -1,4 +1,3 @@
-// FILE: src/components/home/HomePage.tsx
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -20,6 +19,7 @@ const CONTACT = {
   whatsapp: "+54 11 3003-1247",
   whatsappHref:
     "https://wa.me/541130031247?text=Hola%20Earh%20Salud%2C%20quisiera%20hacer%20una%20consulta",
+  instagram: "https://www.instagram.com/earhsalud/?hl=es",
 };
 
 const fadeUp = {
@@ -32,40 +32,41 @@ const STATS = [
   {
     value: 25,
     suffix: "+",
-    label: "familias acompañadas en internación domiciliaria",
+    label: "familias acompañadas en internación y asistencia domiciliaria",
   },
   {
     value: 30,
     suffix: "+",
-    label: "profesionales activos en nuestra red de cuidados",
+    label: "profesionales activos en nuestra red de atención",
   },
   {
-    value: 15,
+    value: 30,
     suffix: "+",
-    label: "años de experiencia combinada del equipo",
+    label: "años de experiencia en salud",
   },
 ];
 
 const TESTIMONIALS = [
   {
     quote:
-      "Gracias al equipo de cuidadores pudimos acompañar a mi papá con tranquilidad en su casa. La comunicación fue clara desde el inicio.",
+      "Gracias al equipo de Earh Salud pudimos organizar la atención de mi papá en su casa con mucha más tranquilidad. Siempre sentimos acompañamiento.",
     name: "María, hija de paciente",
   },
   {
     quote:
-      "La coordinación fue rápida y siempre hubo alguien disponible para responder dudas. Vimos una mejora en el ánimo de nuestro familiar al estar en su entorno.",
+      "La coordinación fue rápida y clara. Pudimos acceder a profesionales en domicilio sin mover a nuestro familiar de su entorno.",
     name: "Jorge, familiar acompañante",
   },
   {
     quote:
-      "Nos ayudaron a organizar los cuidados en casa sin perder el vínculo con los médicos tratantes. Sentimos que hubo un plan y no decisiones aisladas.",
+      "Nos ayudaron a entender qué modalidad necesitábamos y a ordenar los cuidados en casa con seguimiento y comunicación constante.",
     name: "Luciana, esposa de paciente",
   },
 ];
 
 export default function HomePage() {
   const router = useRouter();
+
   return (
     <section className="space-y-14 sm:space-y-20">
       <motion.header
@@ -75,7 +76,7 @@ export default function HomePage() {
         <div className="pointer-events-none absolute inset-0">
           <Image
             src="/imagenes/home-hero.jpeg"
-            alt="Profesionales de salud acompañando a una persona mayor en su hogar"
+            alt="Profesionales de salud brindando atención domiciliaria a paciente en Buenos Aires"
             fill
             priority
             sizes="100vw"
@@ -88,7 +89,7 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:px-6 sm:py-14 lg:flex-row lg:items-center lg:px-8">
-          <div className="max-w-xl space-y-4">
+          <div className="max-w-2xl space-y-4">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/95 px-3 py-1 text-xs font-medium text-earh-blue-900 shadow-sm">
               <Image
                 src="/imagenes/logo-earh-iso.png"
@@ -96,39 +97,55 @@ export default function HomePage() {
                 width={24}
                 height={24}
               />
-              <span>Earh Salud · Internación domiciliaria</span>
+              <span>Earh Salud · Atención en salud con enfoque humano</span>
             </div>
 
             <p className="text-xs font-semibold tracking-[0.18em] text-earh-cream-50/90 sm:text-sm">
-              INTERNACIÓN DOMICILIARIA EN CABA Y GBA
+              INTERNACIÓN DOMICILIARIA, ASISTENCIA DOMICILIARIA Y CONSULTORIOS
+              EN CABA Y GBA
             </p>
 
             <h1 className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-5xl">
-              Internación domiciliaria con enfoque humano y coordinado
+              Internación y asistencia domiciliaria en CABA y Gran Buenos Aires
             </h1>
 
-            <p className="max-w-xl text-sm text-white/90 sm:text-base">
-              Earh Salud SRL está compuesta por un grupo interdisciplinario de
-              profesionales con alta experiencia en salud. Acompañamos a
-              pacientes y familias para continuar los cuidados en el hogar, con
-              seguimiento cercano y coordinación integral.
+            <p className="max-w-2xl text-sm text-white/90 sm:text-base">
+              Earh Salud SRL está integrada por un equipo interdisciplinario con
+              experiencia en instituciones públicas y privadas de referencia.
+              Brindamos Internación Domiciliaria, Asistencia Domiciliaria y
+              atención en Consultorios Médicos Uruguay, con un enfoque cercano,
+              coordinado y profesional.
             </p>
 
+            <div className="flex flex-wrap gap-2 pt-1">
+              {[
+                "Atención coordinada",
+                "Equipo interdisciplinario",
+                "CABA y GBA",
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium text-white/90 backdrop-blur-sm"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <button
                 type="button"
                 onClick={() => router.push("/internacion-domiciliaria")}
                 className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg bg-earh-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-card transition duration-200 hover:bg-earh-blue-700 hover:shadow-cardHover active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-earh-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent sm:w-auto"
               >
-                Internación domiciliaria
+                Internación Domiciliaria
               </button>
 
               <button
                 type="button"
-                onClick={() => router.push("/consultorios-medicos-uruguay")}
+                onClick={() => router.push("/asistencia-domiciliaria")}
                 className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg border border-white/80 bg-white/95 px-5 py-2.5 text-sm font-medium text-earh-blue-900 shadow-sm transition duration-200 hover:border-earh-blue-200 hover:bg-earh-blue-50 hover:shadow-card active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-earh-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent sm:w-auto"
               >
-                Consultorios Médicos Uruguay
+                Asistencia Domiciliaria
               </button>
 
               <a
@@ -171,7 +188,8 @@ export default function HomePage() {
             />
           </div>
           <div className="px-3 py-2 text-xs text-neutral-800">
-            Cuidadores y equipo de salud coordinando el día a día en casa.
+            Atención coordinada en domicilio, con foco en el paciente y su
+            familia.
           </div>
         </div>
       </motion.header>
@@ -188,23 +206,25 @@ export default function HomePage() {
             Quiénes somos
           </h2>
           <p className="text-sm leading-7 text-neutral-700 sm:text-base">
-            Earh Salud SRL está compuesta por un grupo interdisciplinario de
-            profesionales con experiencia en instituciones públicas y privadas
-            de referencia. El objetivo es acompañar a cada paciente con atención
-            responsable, coordinada y cercana.
+            Earh Salud SRL es una empresa creada por profesionales de la salud
+            con más de 30 años de experiencia. Esa trayectoria nos permite
+            comprender la realidad cotidiana de las instituciones sanitarias y
+            responder con criterio en un área tan sensible como la salud.
           </p>
           <p className="text-sm leading-7 text-neutral-700 sm:text-base">
-            Contamos con médicos de diversas especialidades, kinesiólogos,
-            fonoaudiólogos, enfermeros, cuidadores y un equipo administrativo
-            que entiende la complejidad de las distintas patologías. Buscamos
-            reducir tiempos de espera y brindar una prestación de calidad para
-            el paciente y su familia.
+            Nuestro equipo está conformado por diversas especialidades médicas,
+            kinesiólogos, fonoaudiólogos, enfermeros, cuidadores y personal
+            administrativo con experiencia en instituciones públicas y privadas
+            de referencia. Trabajamos para acompañar a cada paciente con
+            atención responsable, coordinada y cercana, reduciendo tiempos de
+            espera y brindando una prestación de calidad para la persona y su
+            familia.
           </p>
 
-          <div className="mt-4 grid gap-4 rounded-2xl bg-white/80 p-5 sm:grid-cols-2 border border-earh-blue-100 shadow-sm">
+          <div className="mt-4 grid gap-4 rounded-2xl border border-earh-blue-100 bg-white/80 p-5 shadow-sm sm:grid-cols-2">
             <div className="flex gap-3">
               <svg
-                className="h-6 w-6 text-earh-blue-700 flex-shrink-0 mt-1"
+                className="mt-1 h-6 w-6 flex-shrink-0 text-earh-blue-700"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -215,18 +235,19 @@ export default function HomePage() {
 
               <div className="space-y-1.5">
                 <p className="font-semibold text-earh-blue-900">
-                  Acompañamiento a la familia
+                  Acompañamiento al paciente y la familia
                 </p>
-                <p className="text-neutral-800 leading-relaxed text-sm">
-                  Explicamos cada paso del plan de cuidados para que la familia
-                  sepa qué esperar y a quién contactar.
+                <p className="text-sm leading-relaxed text-neutral-800">
+                  Explicamos cada etapa del proceso para que la familia sepa
+                  cómo se organiza la atención y con quién cuenta en cada
+                  momento.
                 </p>
               </div>
             </div>
 
             <div className="flex gap-3">
               <svg
-                className="h-6 w-6 text-earh-blue-700 flex-shrink-0 mt-1"
+                className="mt-1 h-6 w-6 flex-shrink-0 text-earh-blue-700"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -239,11 +260,12 @@ export default function HomePage() {
 
               <div className="space-y-1.5">
                 <p className="font-semibold text-earh-blue-900">
-                  Coordinación con médicos tratantes
+                  Coordinación interdisciplinaria
                 </p>
-                <p className="text-neutral-800 leading-relaxed text-sm">
-                  Articulamos la internación domiciliaria con los profesionales
-                  que ya siguen al paciente.
+                <p className="text-sm leading-relaxed text-neutral-800">
+                  Articulamos prestaciones domiciliarias, seguimiento
+                  profesional y respuesta administrativa según la necesidad de
+                  cada caso.
                 </p>
               </div>
             </div>
@@ -261,7 +283,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="space-y-5">
+        <div className="hidden space-y-5 md:block">
           <div className="relative overflow-hidden rounded-2xl border bg-white shadow-sm">
             <div className="relative aspect-[4/3] w-full">
               <Image
@@ -282,25 +304,27 @@ export default function HomePage() {
               <div>
                 <p className="font-semibold text-black">Misión</p>
                 <p>
-                  Mejorar la salud y el bienestar de las personas a través de
-                  soluciones de cuidado accesibles, coordinadas y humanas.
+                  Ofrecer atención médica integral y personalizada, asegurando
+                  el bienestar de cada paciente a través de nuestros tres
+                  pilares: Internación Domiciliaria, Asistencia Domiciliaria y
+                  Consultorios Médicos Uruguay.
                 </p>
               </div>
               <div>
                 <p className="font-semibold text-black">Visión</p>
                 <p>
-                  Ser referencia en internación domiciliaria y servicios
-                  vinculados, integrando atención en el hogar y en consultorios
-                  sin perder el trato humano.
+                  Ser una referencia en atención sanitaria coordinada,
+                  integrando servicios en domicilio y consultorios con
+                  profesionalismo, cercanía y continuidad asistencial.
                 </p>
               </div>
               <div>
                 <p className="font-semibold text-black">Valores</p>
-                <ul className="space-y-1 list-disc pl-4">
-                  <li>Integridad</li>
+                <ul className="list-disc space-y-1 pl-4">
                   <li>Compromiso</li>
-                  <li>Innovación responsable</li>
-                  <li>Accesibilidad y cercanía</li>
+                  <li>Calidad humana</li>
+                  <li>Responsabilidad profesional</li>
+                  <li>Cercanía y coordinación</li>
                 </ul>
               </div>
             </div>
@@ -308,36 +332,116 @@ export default function HomePage() {
         </div>
       </motion.section>
 
+      <motion.section {...fadeUp} className="mx-auto max-w-6xl space-y-4">
+        <div className="max-w-3xl space-y-2">
+          <p className="text-xs font-semibold tracking-wide text-earh-blue-600">
+            TRES PILARES DE ATENCIÓN
+          </p>
+          <h2 className="text-3xl font-bold tracking-tight text-earh-blue-900 sm:text-4xl">
+            Soluciones de salud pensadas para distintas necesidades
+          </h2>
+          <p className="text-sm leading-7 text-neutral-700 sm:text-base">
+            En Earh Salud articulamos distintas modalidades de atención para
+            acompañar al paciente en su hogar o acercarle atención médica en
+            consultorio, siempre con un enfoque profesional, humano y
+            coordinado.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          <ServiceCard
+            title="Internación Domiciliaria"
+            body="Atención integral en el hogar para pacientes clínicamente estables que requieren seguimiento médico, de enfermería y terapéutico, con una complejidad adaptada al entorno domiciliario."
+            href="/internacion-domiciliaria"
+            bullets={[
+              "Atención coordinada por equipo interdisciplinario",
+              "Seguimiento del plan de cuidados",
+              "Alternativa a hospitalizaciones prolongadas",
+            ]}
+          />
+          <ServiceCard
+            title="Asistencia Domiciliaria"
+            body="Prestaciones específicas en el hogar para personas que necesitan apoyo en su cuidado diario, recuperación o tratamiento, sin llegar a la complejidad de una internación domiciliaria."
+            href="/asistencia-domiciliaria"
+            bullets={[
+              "Kinesiología, enfermería y acompañamiento",
+              "Servicios adaptados a cada necesidad",
+              "Apoyo al paciente y su entorno familiar",
+            ]}
+          />
+          <ServiceCard
+            title="Consultorios Médicos Uruguay"
+            body="Atención médica ambulatoria con foco en consulta, seguimiento y acceso profesional en una ubicación estratégica del Microcentro."
+            href="/consultorios-medicos-uruguay"
+            bullets={[
+              "Próximamente",
+              "Nueva propuesta de atención en consultorios",
+              "Más información disponible dentro de poco",
+            ]}
+          />
+        </div>
+      </motion.section>
+
       <motion.section
         {...fadeUp}
-        className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2"
+        className="mx-auto max-w-6xl rounded-2xl border bg-white p-6 shadow-sm sm:p-8"
       >
-        <ServiceCard
-          title="Internación domiciliaria"
-          body="Coordinamos cuidados en el hogar para pacientes adultos y mayores que requieren acompañamiento sostenido, asistencia en actividades diarias y contención a la familia."
-          href="/internacion-domiciliaria"
-          bullets={[
-            "Cuidadores capacitados y equipo interdisciplinario",
-            "Plan de cuidados ajustado a cada caso",
-            "Seguimiento y comunicación con la familia",
-          ]}
-        />
-        <ServiceCard
-          title="Policonsultorio Médico"
-          body={
-            <>
-              <strong>Consultorios Médicos Uruguay</strong> ofrece atención
-              primaria, consultas y seguimiento con profesionales de amplia
-              trayectoria en instituciones de Buenos Aires.
-            </>
-          }
-          href="/consultorios-medicos-uruguay"
-          bullets={[
-            "Consultas clínicas y especialidades",
-            "Ubicación estratégica en Microcentro",
-            "Turnos coordinados sin grandes demoras",
-          ]}
-        />
+        <div className="max-w-3xl space-y-3">
+          <p className="text-xs font-semibold tracking-wide text-earh-blue-600">
+            INTERNACIÓN Y ASISTENCIA EN DOMICILIO
+          </p>
+          <h2 className="text-2xl font-semibold text-earh-blue-900 sm:text-3xl">
+            Dos modalidades de atención en domicilio, según la necesidad de cada
+            paciente
+          </h2>
+          <p className="text-neutral-700">
+            Aunque ambas se desarrollan en el hogar, no cumplen la misma
+            función. En Earh Salud evaluamos cada situación para orientar a la
+            familia hacia la modalidad más adecuada.
+          </p>
+        </div>
+
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <div className="rounded-2xl border border-earh-blue-100 bg-earh-cream-50 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-md">
+            <h3 className="mb-3 text-xl font-semibold text-earh-blue-900">
+              Internación Domiciliaria
+            </h3>
+            <p className="text-sm leading-7 text-neutral-700">
+              Está orientada a pacientes que necesitan una atención más integral
+              en su casa, con seguimiento médico, de enfermería y terapéutico,
+              siempre que su condición clínica permita continuar fuera de una
+              internación tradicional.
+            </p>
+            <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-neutral-700">
+              <li>Mayor complejidad asistencial</li>
+              <li>Plan integral de cuidados</li>
+              <li>Alternativa a la hospitalización</li>
+              <li>Participación de familia o cuidadores</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-earh-blue-100 bg-earh-cream-50 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-md">
+            <h3 className="mb-3 text-xl font-semibold text-earh-blue-900">
+              Asistencia Domiciliaria
+            </h3>
+            <p className="text-sm leading-7 text-neutral-700">
+              Está enfocada en prestaciones puntuales y apoyo cotidiano para
+              personas con cierto grado de dependencia, recuperación o necesidad
+              específica en el hogar.
+            </p>
+            <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-neutral-700">
+              <li>Kinesiología, medicación y acompañamiento</li>
+              <li>Cuidados diarios y apoyo funcional</li>
+              <li>No requiere intervención médica constante</li>
+              <li>Se adapta a la necesidad del paciente y su entorno</li>
+            </ul>
+          </div>
+        </div>
+
+        <p className="mt-5 text-sm text-neutral-700">
+          Si no sabés qué modalidad se ajusta mejor a tu situación, nuestro
+          equipo puede orientarte.
+        </p>
       </motion.section>
 
       <motion.section
@@ -349,15 +453,15 @@ export default function HomePage() {
             Dónde trabajamos
           </h2>
           <p className="mb-3 text-neutral-700">
-            El servicio de internación domiciliaria está disponible en:
+            Nuestros servicios domiciliarios se coordinan en:
           </p>
-          <ul className="space-y-1 list-disc pl-5 text-neutral-700">
+          <ul className="list-disc space-y-1 pl-5 text-neutral-700">
             <li>Ciudad Autónoma de Buenos Aires</li>
             <li>Gran Buenos Aires, con coordinación previa según cada caso</li>
           </ul>
           <p className="mt-3 text-sm text-neutral-700">
-            En cada consulta evaluamos la ubicación y la complejidad clínica
-            para confirmar disponibilidad del equipo en la zona.
+            En cada consulta evaluamos la ubicación y la complejidad de la
+            necesidad para confirmar disponibilidad del equipo en la zona.
           </p>
         </div>
 
@@ -365,19 +469,20 @@ export default function HomePage() {
           <h2 className="mb-3 text-2xl font-semibold text-earh-blue-900">
             Cómo trabajamos
           </h2>
-          <ol className="space-y-2 list-decimal pl-5 text-neutral-700">
+          <ol className="list-decimal space-y-2 pl-5 text-neutral-700">
             <li>
-              Recibimos la consulta y entendemos la situación clínica y
-              familiar.
+              Recibimos la consulta y entendemos la situación del paciente y su
+              entorno.
             </li>
             <li>
-              Evaluamos la complejidad del caso y definimos el plan de cuidados.
+              Evaluamos si la necesidad corresponde a Internación Domiciliaria,
+              Asistencia Domiciliaria u otra modalidad de atención.
             </li>
-            <li>Coordinamos horarios, frecuencia y equipo profesional.</li>
             <li>
-              Mantenemos un seguimiento activo y comunicación constante con la
-              familia.
+              Definimos la frecuencia, el perfil profesional y la coordinación
+              administrativa.
             </li>
+            <li>Mantenemos seguimiento y comunicación clara con la familia.</li>
           </ol>
         </div>
       </motion.section>
@@ -399,25 +504,27 @@ export default function HomePage() {
                 className="object-contain"
               />
             </div>
-            <span>Cuidado coordinado en el hogar y consultorios</span>
+            <span>Tres pilares de atención coordinada</span>
           </div>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           <BenefitItem title="Experiencia interdisciplinaria">
-            Profesionales médicos, enfermeros, kinesiólogos y cuidadores con
-            trayectoria en instituciones de referencia.
+            Profesionales médicos, enfermeros, kinesiólogos, fonoaudiólogos,
+            cuidadores y personal capacitado con trayectoria en instituciones de
+            referencia.
           </BenefitItem>
           <BenefitItem title="Enfoque humano y cercano">
             Priorizamos la contención del paciente y su familia, con
-            comunicación clara y permanente.
+            comunicación clara, seguimiento y trato responsable.
           </BenefitItem>
-          <BenefitItem title="Coordinación integral">
-            Articulamos cuidados en domicilio, consultorios y otros servicios de
-            salud según la necesidad de cada caso.
+          <BenefitItem title="Atención según cada necesidad">
+            Brindamos internación domiciliaria, asistencia domiciliaria y
+            atención en consultorios, evaluando qué modalidad se ajusta mejor a
+            cada caso.
           </BenefitItem>
-          <BenefitItem title="Optimización de recursos">
-            Buscamos reducir reinternaciones y traslados innecesarios, sin
-            perder la calidad de la atención.
+          <BenefitItem title="Coordinación y continuidad">
+            Buscamos reducir tiempos de espera, evitar traslados innecesarios y
+            sostener una atención organizada y posible para la familia.
           </BenefitItem>
         </div>
       </motion.section>
@@ -456,20 +563,24 @@ export default function HomePage() {
           Preguntas frecuentes
         </h2>
         <FAQItem
-          q="¿Qué incluye la internación domiciliaria?"
-          a="Incluye acompañamiento por cuidadores capacitados, coordinación con profesionales de salud, seguimiento de indicaciones médicas externas y comunicación con la familia."
+          q="¿Qué diferencia hay entre internación domiciliaria y asistencia domiciliaria?"
+          a="La internación domiciliaria implica una atención más integral y compleja en el hogar, como alternativa a la hospitalización tradicional cuando la condición clínica lo permite. La asistencia domiciliaria, en cambio, brinda prestaciones puntuales y apoyo cotidiano según la necesidad del paciente."
+        />
+        <FAQItem
+          q="¿Qué tipo de prestaciones pueden coordinar?"
+          a="Según cada caso, coordinamos atención médica, enfermería, kinesiología, acompañamiento, cuidadores y otras prestaciones domiciliarias."
         />
         <FAQItem
           q="¿Atienden con obra social o solo particular?"
-          a="Trabajamos con pacientes particulares y con coberturas médicas. En cada consulta confirmamos alcances, autorizaciones y circuitos de derivación."
+          a="Trabajamos con pacientes particulares y con coberturas médicas. En cada consulta confirmamos alcances, autorizaciones y circuitos administrativos."
         />
         <FAQItem
           q="¿En qué zonas brindan servicio?"
-          a="En CABA y Gran Buenos Aires, evaluando la disponibilidad del equipo según el domicilio del paciente."
+          a="En CABA y Gran Buenos Aires, evaluando disponibilidad según domicilio, complejidad y tipo de prestación."
         />
         <FAQItem
           q="¿Cómo inicio una consulta?"
-          a="Podés comunicarte por WhatsApp, teléfono o completar el formulario en la sección Contacto. Respondemos en la menor cantidad de tiempo posible."
+          a="Podés comunicarte por WhatsApp, teléfono o completar el formulario en la sección Contacto. Te orientamos según la necesidad del paciente."
         />
       </motion.section>
 
@@ -478,12 +589,13 @@ export default function HomePage() {
         className="mx-auto max-w-6xl rounded-2xl border bg-white p-6 text-center shadow-sm sm:p-8"
       >
         <h2 className="mb-3 text-2xl font-semibold text-earh-blue-900 sm:text-3xl">
-          ¿Necesitás coordinar cuidados en el hogar?
+          ¿Necesitás orientación para coordinar atención en domicilio?
         </h2>
         <p className="mx-auto mb-5 max-w-2xl text-neutral-700">
-          Contanos la situación y evaluamos juntos la mejor alternativa de
-          internación domiciliaria o atención en consultorios. Nos enfocamos en
-          que el plan sea claro, posible y sostenible para la familia.
+          Contanos la situación y te ayudamos a identificar si la necesidad
+          corresponde a Internación Domiciliaria, Asistencia Domiciliaria o una
+          consulta general. Nuestro objetivo es ofrecer una respuesta clara,
+          profesional y posible para cada familia.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <Link
@@ -499,6 +611,14 @@ export default function HomePage() {
             className="w-full rounded-lg border border-earh-green-600/40 bg-earh-green-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-earh-green-600/90 sm:w-auto"
           >
             Escribir por WhatsApp
+          </a>
+          <a
+            href={CONTACT.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full rounded-lg border border-earh-blue-200 bg-white px-5 py-2.5 text-sm font-semibold text-earh-blue-900 shadow-sm transition hover:bg-earh-blue-50 sm:w-auto"
+          >
+            Ver Instagram
           </a>
         </div>
         <p className="mt-5 text-xs text-neutral-500">
@@ -562,13 +682,19 @@ function ServiceCard({
         <div className="relative flex h-full flex-col">
           <div className="mb-4 h-2 w-12 rounded-full bg-earh-blue-600/90 transition-all group-hover:w-16 group-hover:bg-earh-blue-700" />
 
+          {title === "Consultorios Médicos Uruguay" && (
+            <span className="mb-3 inline-flex w-fit rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700">
+              Próximamente
+            </span>
+          )}
+
           <h2 className="mb-2 text-xl font-bold text-earh-blue-900 sm:text-2xl">
             {title}
           </h2>
 
           <p className="mb-4 text-sm text-neutral-700 sm:text-base">{body}</p>
 
-          <ul className="mb-4 space-y-1 list-disc pl-5 text-sm text-neutral-700">
+          <ul className="mb-4 list-disc space-y-1 pl-5 text-sm text-neutral-700">
             {bullets.map((item) => (
               <li key={item}>{item}</li>
             ))}
