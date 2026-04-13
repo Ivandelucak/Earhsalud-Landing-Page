@@ -1,11 +1,10 @@
-// FILE: src/app/(site)/servicios/page.tsx
 import type { Metadata } from "next";
 import ServiciosSection from "./ServiciosSection";
 
 export const metadata: Metadata = {
-  title: "Servicios – Earh Salud",
+  title: "Servicios de salud en domicilio y consultorios – Earh Salud",
   description:
-    "Internación domiciliaria en CABA y GBA y Policonsultorio en Microcentro. Conocé qué ofrece cada servicio y cómo coordinar.",
+    "Conocé los servicios de Earh Salud: Internación Domiciliaria, Asistencia Domiciliaria y Consultorios Médicos Uruguay. Atención coordinada en CABA y Gran Buenos Aires.",
 };
 
 export default function ServiciosPage() {

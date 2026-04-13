@@ -1,4 +1,3 @@
-// FILE: src/app/(site)/servicios/ServiciosSection.tsx
 "use client";
 
 import Link from "next/link";
@@ -24,43 +23,50 @@ const WHATSAPP_HREF =
 export default function ServiciosSection() {
   return (
     <section className="space-y-10">
-      {/* HEADER */}
       <motion.header {...heroAnim} className="space-y-3">
         <p className="text-xs font-semibold tracking-wide text-earh-blue-600">
           SERVICIOS DE EARH SALUD
         </p>
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          Internación domiciliaria y Policonsultorio
+          Internación domiciliaria, asistencia domiciliaria y consultorios
         </h1>
         <p className="max-w-3xl text-neutral-700">
-          Earh Salud ofrece internación domiciliaria en CABA y Gran Buenos Aires
-          y atención en consultorios en Uruguay 266 (Microcentro). En esta
-          sección podés ver qué incluye cada servicio y cómo combinarlos según
-          la situación de la persona y la familia.
+          Earh Salud organiza su atención a través de tres pilares:{" "}
+          <strong>Internación Domiciliaria</strong>,{" "}
+          <strong>Asistencia Domiciliaria</strong> y{" "}
+          <strong>Consultorios Médicos Uruguay</strong>. En esta sección podés
+          ver qué resuelve cada modalidad y cuál puede adaptarse mejor a la
+          necesidad del paciente y su familia.
         </p>
       </motion.header>
 
-      {/* TARJETAS PRINCIPALES */}
       <motion.section
         {...sectionInView}
-        className="grid grid-cols-1 gap-6 md:grid-cols-2"
+        className="grid grid-cols-1 gap-6 md:grid-cols-3"
       >
         <BannerCard
           href="/internacion-domiciliaria"
           title="Internación domiciliaria"
-          body="Cuidado en el hogar para personas adultas y mayores, con cuidadores capacitados, coordinación profesional y seguimiento continuo."
+          body="Atención integral en el hogar para pacientes que necesitan seguimiento sostenido, coordinación profesional y un plan de cuidados más complejo."
           imageSrc="/imagenes/home-hero-alt.jpeg"
+        />
+
+        <BannerCard
+          href="/asistencia-domiciliaria"
+          title="Asistencia domiciliaria"
+          body="Prestaciones médicas y asistenciales en domicilio para resolver necesidades puntuales con una modalidad flexible y personalizada."
+          imageSrc="/imagenes/profesional-explicando-papel-hero-asistencia.jpeg"
         />
 
         <BannerCard
           href="/consultorios-medicos-uruguay"
           title="Consultorios Médicos Uruguay"
-          body="Consultas clínicas y de especialidades, turnos ágiles en Microcentro, CABA."
+          body="Atención médica ambulatoria en Microcentro, con una nueva propuesta de consultorios y especialidades."
           imageSrc="/imagenes/cmu-sala-espera.jpeg"
+          badge="Próximamente"
         />
       </motion.section>
 
-      {/* QUÉ INCLUYE CADA SERVICIO */}
       <motion.section
         {...sectionInView}
         className="rounded-2xl border bg-white/90 p-6 shadow-sm sm:p-8"
@@ -69,84 +75,49 @@ export default function ServiciosSection() {
           ¿Qué incluye cada servicio en la práctica?
         </h2>
 
-        <div className="grid gap-6 sm:grid-cols-2">
-          <div className="rounded-xl bg-earh-cream-50/80 p-5 sm:p-6">
-            <h3 className="text-lg font-semibold text-earh-blue-900">
-              Internación domiciliaria
-            </h3>
-            <p className="mt-1 text-sm text-neutral-700">
-              Pensada para personas que necesitan cuidados sostenidos, pero
-              pueden permanecer en su hogar con acompañamiento adecuado y
-              coordinación profesional.
-            </p>
-            <ul className="mt-3 space-y-2 text-neutral-700">
-              <Bullet>
-                Cuidadores capacitados y equipo interdisciplinario en contacto
-                permanente.
-              </Bullet>
-              <Bullet>
-                Asistencia en higiene, movilidad, alimentación y actividades
-                cotidianas.
-              </Bullet>
-              <Bullet>
-                Seguimiento de indicaciones médicas externas y coordinación con
-                profesionales tratantes.
-              </Bullet>
-              <Bullet>
-                Comunicación continua con la familia y ajustes del plan según la
-                evolución.
-              </Bullet>
-            </ul>
-            <Link
-              href="/internacion-domiciliaria"
-              className="mt-4 inline-flex items-center text-sm font-medium text-earh-blue-700 underline-offset-4 hover:underline"
-            >
-              Ver más sobre internación domiciliaria
-              <span aria-hidden className="ml-1">
-                →
-              </span>
-            </Link>
-          </div>
+        <div className="grid gap-6 lg:grid-cols-3">
+          <ServiceInfoCard
+            title="Internación domiciliaria"
+            description="Pensada para pacientes que necesitan una atención más integral y sostenida en su hogar, con mayor complejidad asistencial y coordinación continua."
+            bullets={[
+              "Servicios médicos, de enfermería y terapéuticos en el domicilio.",
+              "Plan integral de cuidados según la complejidad del caso.",
+              "Participación de la familia o cuidadores y coordinación administrativa permanente.",
+              "Alternativa a internaciones prolongadas cuando la condición clínica lo permite.",
+            ]}
+            href="/internacion-domiciliaria"
+            cta="Ver más sobre internación domiciliaria"
+          />
 
-          <div className="rounded-xl bg-earh-cream-50/80 p-5 sm:p-6">
-            <h3 className="text-lg font-semibold text-earh-blue-900">
-              Consultorios Médicos Uruguay
-            </h3>
-            <p className="mt-1 text-sm text-neutral-700">
-              Consultorios Médicos Uruguay es el espacio de atención ambulatoria
-              en Microcentro, con turnos coordinados y circuitos definidos.
-            </p>
-            <ul className="mt-3 space-y-2 text-neutral-700">
-              <Bullet>
-                Consultas de clínica médica y especialidades seleccionadas.
-              </Bullet>
-              <Bullet>
-                Cardiología, ortopedia, traumatología, infectología y rayos,
-                entre otras.
-              </Bullet>
-              <Bullet>
-                Derivación y coordinación de estudios complementarios cuando es
-                necesario.
-              </Bullet>
-              <Bullet>
-                Ubicación estratégica en Uruguay 266, 1º E, CABA, con fácil
-                acceso en transporte público.
-              </Bullet>
-            </ul>
-            <Link
-              href="/consultorios-medicos-uruguay"
-              className="mt-4 inline-flex items-center text-sm font-medium text-earh-blue-700 underline-offset-4 hover:underline"
-            >
-              Ver más sobre el Policonsultorio
-              <span aria-hidden className="ml-1">
-                →
-              </span>
-            </Link>
-          </div>
+          <ServiceInfoCard
+            title="Asistencia domiciliaria"
+            description="Orientada a prestaciones específicas y apoyo cotidiano en el hogar, sin llegar a la complejidad de una internación domiciliaria."
+            bullets={[
+              "Especialidades médicas, enfermería, kinesiología, acompañantes terapéuticos y cuidadores.",
+              "Apoyo en higiene, alimentación, movilización y acompañamiento según necesidad.",
+              "Prestaciones puntuales en domicilio con coordinación flexible.",
+              "Respuesta profesional adaptada al paciente y su entorno.",
+            ]}
+            href="/asistencia-domiciliaria"
+            cta="Ver más sobre asistencia domiciliaria"
+          />
+
+          <ServiceInfoCard
+            title="Consultorios Médicos Uruguay"
+            description="Espacio de atención ambulatoria en Microcentro, pensado para consultas, seguimiento y especialidades médicas."
+            bullets={[
+              "Atención clínica y de especialidades seleccionadas.",
+              "Ubicación estratégica en Uruguay 266, 1º E, CABA.",
+              "Nueva propuesta de atención en consultorios.",
+              "Actualmente en etapa de lanzamiento.",
+            ]}
+            href="/consultorios-medicos-uruguay"
+            cta="Ver más sobre consultorios"
+            upcoming
+          />
         </div>
       </motion.section>
 
-      {/* COMPARACIÓN DE SERVICIOS */}
       <motion.section
         {...sectionInView}
         className="rounded-2xl border bg-earh-cream-50 p-6 sm:p-8"
@@ -156,46 +127,59 @@ export default function ServiciosSection() {
         </h2>
 
         <div className="overflow-hidden rounded-2xl border bg-white shadow-sm">
-          {/* Header (solo desktop/tablet) */}
-          <div className="hidden bg-earh-blue-50/80 text-xs font-semibold text-earh-blue-900 sm:grid sm:grid-cols-[1.2fr_1fr_1fr]">
+          <div className="hidden bg-earh-blue-50/80 text-xs font-semibold text-earh-blue-900 lg:grid lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
             <div className="border-r px-4 py-3 uppercase tracking-wide">
               Situación
             </div>
             <div className="border-r px-4 py-3 uppercase tracking-wide">
               Internación domiciliaria
             </div>
+            <div className="border-r px-4 py-3 uppercase tracking-wide">
+              Asistencia domiciliaria
+            </div>
             <div className="px-4 py-3 uppercase tracking-wide">
               Consultorios Médicos Uruguay
             </div>
           </div>
 
-          {/* Filas */}
           <div className="divide-y text-sm text-neutral-700">
             <ComparisonRow
-              situation="Persona mayor que requiere ayuda diaria pero puede permanecer en su casa."
-              home="Cuidadores en domicilio, coordinación con profesionales y apoyo a la familia."
-              clinic="Consultas puntuales de control, siempre que el traslado sea posible."
+              situation="Paciente que necesita una atención más integral y sostenida en su hogar."
+              home="Es la modalidad más adecuada cuando el caso requiere un plan de cuidados más complejo."
+              assistance="No suele ser suficiente si se necesita un abordaje continuo e integral."
+              clinic="Puede complementar con controles puntuales si el traslado es posible."
             />
+
             <ComparisonRow
-              situation="Alta hospitalaria reciente con necesidad de seguimiento cercano."
-              home="Plan de cuidados en el hogar y foco en reducir reinternaciones."
-              clinic="Controles médicos programados y estudios según indicación."
+              situation="Necesidad puntual de una consulta, enfermería, kinesiología o apoyo en domicilio."
+              home="No siempre es la primera opción si no hace falta una estructura integral."
+              assistance="Es la modalidad indicada para prestaciones específicas y apoyo cotidiano."
+              clinic="Puede ser opción si el paciente puede trasladarse y la atención es ambulatoria."
             />
+
             <ComparisonRow
-              situation="Consulta clínica o por especialidad sin internación."
+              situation="Consulta clínica o por especialidad sin requerir atención en el hogar."
               home="No suele ser la primera opción."
-              clinic="Turno en consultorio con el profesional correspondiente."
+              assistance="No siempre corresponde si la necesidad se resuelve en consultorio."
+              clinic="Es la opción natural para consultas ambulatorias y seguimiento médico."
+            />
+
+            <ComparisonRow
+              situation="Familia que necesita orientación para definir qué modalidad conviene."
+              home="Puede ser adecuada si hay necesidad de cuidados sostenidos."
+              assistance="Puede ser adecuada si se trata de una necesidad puntual o apoyo cotidiano."
+              clinic="Puede complementar con controles médicos o evaluación presencial."
             />
           </div>
         </div>
 
         <p className="mt-3 text-sm text-neutral-700">
-          En muchos casos combinamos ambas modalidades: controles médicos en
-          consultorios e internación domiciliaria para el día a día en el hogar.
+          En algunos casos combinamos modalidades: por ejemplo, controles en
+          consultorio, prestaciones puntuales en domicilio o un esquema más
+          integral de internación domiciliaria según la evolución del paciente.
         </p>
       </motion.section>
 
-      {/* CÓMO SOLICITAR UN SERVICIO */}
       <motion.section
         {...sectionInView}
         className="rounded-2xl border bg-white/95 p-6 shadow-sm sm:p-8"
@@ -203,12 +187,11 @@ export default function ServiciosSection() {
         <p className="text-xs font-semibold tracking-wide text-earh-blue-600">
           PASOS PARA EMPEZAR
         </p>
-        <h2 className="mt-1 mb-4 text-2xl font-semibold text-earh-blue-900">
+        <h2 className="mb-4 mt-1 text-2xl font-semibold text-earh-blue-900">
           ¿Cómo solicitar un servicio?
         </h2>
 
         <div className="grid gap-6 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
-          {/* Pasos */}
           <div>
             <ol className="space-y-3">
               <li className="flex gap-3">
@@ -217,12 +200,14 @@ export default function ServiciosSection() {
                 </div>
                 <div className="space-y-1 text-sm text-neutral-700">
                   <p className="font-semibold text-earh-blue-900">
-                    Indicá el tipo de consulta
+                    Contanos qué tipo de necesidad tienen
                   </p>
                   <p>
-                    Contanos si se trata de{" "}
-                    <strong>internación domiciliaria</strong> o para{" "}
-                    <strong>consultorios médicos uruguay</strong>.
+                    Podés indicarnos si se trata de{" "}
+                    <strong>internación domiciliaria</strong>,{" "}
+                    <strong>asistencia domiciliaria</strong> o{" "}
+                    <strong>consultorios médicos</strong>. Si no lo tenés claro,
+                    también te orientamos.
                   </p>
                 </div>
               </li>
@@ -233,11 +218,12 @@ export default function ServiciosSection() {
                 </div>
                 <div className="space-y-1 text-sm text-neutral-700">
                   <p className="font-semibold text-earh-blue-900">
-                    Describí la situación
+                    Describí la situación del paciente
                   </p>
                   <p>
-                    Comentanos brevemente la <strong>situación clínica</strong>{" "}
-                    y la <strong>zona de residencia</strong> de la persona.
+                    Comentanos brevemente la <strong>situación clínica</strong>,
+                    el <strong>tipo de ayuda</strong> que necesitan y la{" "}
+                    <strong>zona de residencia</strong>.
                   </p>
                 </div>
               </li>
@@ -248,29 +234,28 @@ export default function ServiciosSection() {
                 </div>
                 <div className="space-y-1 text-sm text-neutral-700">
                   <p className="font-semibold text-earh-blue-900">
-                    Coordinamos el circuito
+                    Coordinamos la modalidad más adecuada
                   </p>
                   <p>
-                    Te proponemos opciones de <strong>turnos</strong> o{" "}
-                    <strong>modalidades de atención</strong> y coordinamos el
-                    circuito más adecuado para el caso.
+                    Te proponemos el circuito más conveniente: atención en el
+                    hogar, consultorio o una combinación de ambas modalidades,
+                    según el caso.
                   </p>
                 </div>
               </li>
             </ol>
 
-            <p className="mt-3 text-xs sm:text-sm text-neutral-600">
+            <p className="mt-3 text-xs text-neutral-600 sm:text-sm">
               Cuanta más información inicial tengamos, más fácil es definir un
               circuito claro y posible para la familia.
             </p>
           </div>
 
-          {/* CTA lateral */}
           <div className="rounded-2xl border border-earh-blue-50 bg-earh-cream-50/70 p-4 shadow-sm sm:p-5">
             <p className="text-sm font-semibold text-earh-blue-900">
               Podés empezar ahora mismo
             </p>
-            <p className="mt-1 text-xs sm:text-sm text-neutral-700">
+            <p className="mt-1 text-xs text-neutral-700 sm:text-sm">
               En un primer contacto no hace falta tener todos los datos
               clínicos: con una descripción general ya podemos orientarte.
             </p>
@@ -309,7 +294,6 @@ export default function ServiciosSection() {
         </div>
       </motion.section>
 
-      {/* FAQ */}
       <motion.section {...sectionInView} className="space-y-3">
         <h2 className="mb-2 text-2xl font-semibold text-earh-blue-900">
           Preguntas frecuentes sobre los servicios
@@ -320,20 +304,19 @@ export default function ServiciosSection() {
           a="Trabajamos con pacientes particulares y coordinamos con coberturas médicas según cada caso. En cada consulta inicial revisamos la cobertura y los circuitos administrativos necesarios."
         />
         <FAQ
-          q="¿Qué zonas cubre la internación domiciliaria?"
-          a="CABA y Gran Buenos Aires. Según la complejidad del caso y la dirección, confirmamos la disponibilidad del equipo en la zona."
+          q="¿Qué diferencia hay entre internación domiciliaria y asistencia domiciliaria?"
+          a="La internación domiciliaria implica una atención más integral, continua y de mayor complejidad en el hogar. La asistencia domiciliaria, en cambio, se orienta a prestaciones específicas y apoyo cotidiano según la necesidad del paciente."
         />
         <FAQ
-          q="¿La internación domiciliaria reemplaza al sanatorio?"
-          a="No en todos los casos. Es una alternativa cuando la condición clínica permite continuar el tratamiento en el hogar con cuidados adecuados y supervisión profesional."
+          q="¿Qué zonas cubren los servicios domiciliarios?"
+          a="Trabajamos en CABA y Gran Buenos Aires. Según la complejidad del caso, la dirección y el tipo de prestación, confirmamos la disponibilidad del equipo."
         />
         <FAQ
-          q="¿Cuánto demora en coordinarse un turno?"
-          a="Buscamos ofrecer turnos rápidos. En consultorios, suele ser dentro de los próximos días hábiles; en domicilio, depende de la disponibilidad del equipo y la complejidad del caso."
+          q="¿Consultorios Médicos Uruguay ya está disponible?"
+          a="Actualmente se encuentra en etapa de lanzamiento. Muy pronto habrá más información sobre especialidades, profesionales y atención en consultorio."
         />
       </motion.section>
 
-      {/* CTA FINAL */}
       <motion.section
         {...sectionInView}
         className="rounded-2xl border bg-white/90 p-6 text-center shadow-sm sm:p-8"
@@ -344,8 +327,8 @@ export default function ServiciosSection() {
         <p className="mx-auto mb-5 max-w-2xl text-neutral-700">
           Podés contarnos la situación de la persona, la zona y el tipo de
           acompañamiento que necesitan. Te ayudamos a definir si corresponde
-          internación domiciliaria, atención en consultorios o una combinación
-          de ambas.
+          internación domiciliaria, asistencia domiciliaria, atención en
+          consultorios o una combinación de modalidades.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <Link
@@ -358,7 +341,7 @@ export default function ServiciosSection() {
             href={WHATSAPP_HREF}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-earh-blue-100 bg-green-500 px-5 py-2.5 text-sm font-medium text-earh-blue-900 transition-colors duration-200 hover:border-earh-blue-200 hover:bg-earh-blue-50"
+            className="inline-flex items-center gap-2 rounded-lg border border-earh-blue-100 bg-green-500 px-5 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:border-earh-blue-200 hover:bg-green-600"
           >
             Consultar por WhatsApp
           </a>
@@ -422,11 +405,13 @@ function BannerCard({
   title,
   body,
   imageSrc,
+  badge,
 }: {
   href: string;
   title: string;
   body: string;
   imageSrc: string;
+  badge?: string;
 }) {
   return (
     <Link
@@ -443,7 +428,6 @@ function BannerCard({
           delay: 0.1,
         }}
       >
-        {/* borde degradado + glow */}
         <div className="relative rounded-2xl bg-gradient-to-br from-earh-blue-50 via-white to-earh-cream-50 p-[1px] shadow-sm transition-shadow duration-300 group-hover:shadow-card">
           <motion.article
             whileHover={{ y: -6, scale: 1.01, rotate: -0.4 }}
@@ -451,30 +435,26 @@ function BannerCard({
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             className="relative h-full overflow-hidden rounded-2xl bg-black"
           >
-            {/* imagen */}
             <div className="relative aspect-[3/4] w-full">
               <Image
                 src={imageSrc}
                 alt={title}
                 fill
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.08] group-active:scale-[1.03]"
               />
             </div>
 
-            {/* overlay degradado */}
             <div
               className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/35 to-transparent transition-opacity duration-300 group-hover:from-black/80 group-hover:via-black/45"
               aria-hidden
             />
 
-            {/* badge superior izquierda */}
             <div className="pointer-events-none absolute left-4 top-4 inline-flex items-center gap-1 rounded-full bg-white/95 px-3 py-1 text-[11px] font-medium text-earh-blue-900 shadow-sm sm:left-5 sm:top-5">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-              Ver detalles del servicio
+              {badge ?? "Ver detalles del servicio"}
             </div>
 
-            {/* contenido inferior */}
             <div className="absolute inset-0 flex items-end p-5 sm:p-7">
               <div className="text-white">
                 <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
@@ -506,40 +486,88 @@ function BannerCard({
   );
 }
 
+function ServiceInfoCard({
+  title,
+  description,
+  bullets,
+  href,
+  cta,
+  upcoming = false,
+}: {
+  title: string;
+  description: string;
+  bullets: string[];
+  href: string;
+  cta: string;
+  upcoming?: boolean;
+}) {
+  return (
+    <div className="rounded-xl bg-earh-cream-50/80 p-5 sm:p-6">
+      {upcoming && (
+        <span className="mb-3 inline-flex rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700">
+          Próximamente
+        </span>
+      )}
+
+      <h3 className="text-lg font-semibold text-earh-blue-900">{title}</h3>
+      <p className="mt-1 text-sm text-neutral-700">{description}</p>
+
+      <ul className="mt-3 space-y-2 text-neutral-700">
+        {bullets.map((item) => (
+          <Bullet key={item}>{item}</Bullet>
+        ))}
+      </ul>
+
+      <Link
+        href={href}
+        className="mt-4 inline-flex items-center text-sm font-medium text-earh-blue-700 underline-offset-4 hover:underline"
+      >
+        {cta}
+        <span aria-hidden className="ml-1">
+          →
+        </span>
+      </Link>
+    </div>
+  );
+}
+
 function ComparisonRow({
   situation,
   home,
+  assistance,
   clinic,
 }: {
   situation: string;
   home: string;
+  assistance: string;
   clinic: string;
 }) {
   return (
-    <div className="grid gap-0 bg-white text-sm sm:grid-cols-[1.2fr_1fr_1fr]">
-      {/* Situación */}
-      <div className="border-b px-4 py-3 text-neutral-800 sm:border-b-0 sm:border-r">
-        {/* Label solo en mobile */}
-        <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-earh-blue-700 sm:hidden">
+    <div className="grid gap-0 bg-white text-sm lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
+      <div className="border-b px-4 py-3 text-neutral-800 lg:border-b-0 lg:border-r">
+        <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-earh-blue-700 lg:hidden">
           Situación
         </p>
         <p>{situation}</p>
       </div>
 
-      {/* Internación domiciliaria */}
-      <div className="border-b px-4 py-3 text-neutral-700 sm:border-b-0 sm:border-r">
-        {/* Label solo en mobile */}
-        <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-earh-blue-700 sm:hidden">
+      <div className="border-b px-4 py-3 text-neutral-700 lg:border-b-0 lg:border-r">
+        <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-earh-blue-700 lg:hidden">
           Internación domiciliaria
         </p>
         <p>{home}</p>
       </div>
 
-      {/* Policonsultorio */}
+      <div className="border-b px-4 py-3 text-neutral-700 lg:border-b-0 lg:border-r">
+        <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-earh-blue-700 lg:hidden">
+          Asistencia domiciliaria
+        </p>
+        <p>{assistance}</p>
+      </div>
+
       <div className="px-4 py-3 text-neutral-700">
-        {/* Label solo en mobile */}
-        <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-earh-blue-700 sm:hidden">
-          Policonsultorio Uruguay 266
+        <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-earh-blue-700 lg:hidden">
+          Consultorios Médicos Uruguay
         </p>
         <p>{clinic}</p>
       </div>
