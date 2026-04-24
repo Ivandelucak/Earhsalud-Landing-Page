@@ -17,9 +17,7 @@ export default function ComingSoonOverlay() {
           especialidades médicas.
         </p>
 
-        {/* BOTONES */}
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          {/* Botón principal */}
           <Link
             href="/"
             className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"

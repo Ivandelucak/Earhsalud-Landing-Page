@@ -13,7 +13,6 @@ export default function FloatingQuickActions() {
       "
       aria-label="Accesos rápidos"
     >
-      {/* WhatsApp */}
       <a
         href="https://wa.me/5491100000000?text=Hola%20Earh%20Salud%2C%20quisiera%20hacer%20una%20consulta"
         target="_blank"
@@ -30,7 +29,6 @@ export default function FloatingQuickActions() {
         <span className="text-sm font-medium">WhatsApp</span>
       </a>
 
-      {/* Llamar */}
       <a
         href="tel:+541100000000"
         aria-label="Llamar por teléfono"

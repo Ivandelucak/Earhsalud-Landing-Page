@@ -351,8 +351,6 @@ export default function ServiciosSection() {
   );
 }
 
-/* ---- helpers ---- */
-
 function Bullet({ children }: { children: React.ReactNode }) {
   return (
     <li className="flex gap-2">

@@ -9,7 +9,7 @@ const CONTACT = {
   telHref: "tel:+541147432525",
   whatsapp: "+54 11 3003-1247",
   whatsappHref:
-    "https://wa.me/541130031247?text=Hola%20Earh%20Salud%2C%20quisiera%20informaci%C3%B3n%20sobre%20asistencia%20domiciliaria",
+    "https://wa.me/541130031247?text=Hola%20Earh%20Salud%2C%20quisiera%20informaci%C3%B3n%20sobre%20la%20asistencia%20domiciliaria",
 };
 
 const heroAnim = {

@@ -12,7 +12,7 @@ export type PostMeta = {
   excerpt?: string;
   keywords?: string[];
   author?: string;
-  image?: string; // ruta relativa en /public (por ej: /blog/nobel-2025.jpg)
+  image?: string;
   category?: string;
 };
 

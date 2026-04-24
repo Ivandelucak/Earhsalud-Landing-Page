@@ -529,22 +529,6 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      <motion.section {...fadeUp} className="mx-auto max-w-6xl space-y-6 py-10">
-        <h2 className="text-center text-2xl font-bold text-earh-blue-900">
-          Obras sociales y prepagas (ejemplo)
-        </h2>
-        <div className="relative overflow-hidden rounded-2xl border bg-white/80 p-4">
-          <div className="flex w-max animate-marquee">
-            <LogosStrip ariaHidden={false} />
-            <LogosStrip ariaHidden />
-          </div>
-        </div>
-        <p className="text-center text-xs text-neutral-500">
-          Los logos se muestran a modo de ejemplo visual. La cobertura real se
-          confirma en cada caso.
-        </p>
-      </motion.section>
-
       <motion.section
         {...fadeUp}
         className="mx-auto max-w-6xl rounded-2xl border bg-earh-cream-50 p-6 shadow-sm sm:p-8"
@@ -629,8 +613,6 @@ export default function HomePage() {
     </section>
   );
 }
-
-/* AUXILIARES */
 
 function ServiceCard({
   title,

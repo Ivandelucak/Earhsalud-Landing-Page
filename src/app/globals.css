@@ -14,20 +14,17 @@
   --color-earh-blue-300: #769fbe;
   --color-earh-blue-400: #4f80a7;
   --color-earh-blue-500: #356890;
-  --color-earh-blue-600: #178c9b; /* textos importantes / bordes */
+  --color-earh-blue-600: #178c9b;
   --color-earh-blue-700: #116a92;
   --color-earh-blue-800: #132a3b;
-  --color-earh-blue-900: #0b4a6f; /* títulos bien azules */
+  --color-earh-blue-900: #0b4a6f;
 
-  /* Verdes (WhatsApp, estados positivos) */
   --color-earh-green-100: #dff5e9;
   --color-earh-green-600: #25d366;
 
-  /* Fondo crema suave */
   --color-earh-cream-50: #fff9f3;
 }
 
-/* Fuente principal: Source Sans 3 */
 body {
   font-family: var(
     --font-source-sans-3,
@@ -39,14 +36,9 @@ body {
   );
 }
 
-/* Scroll suave */
 html {
   scroll-behavior: smooth;
 }
-
-/* ===========================
-   Animaciones utilitarias
-   =========================== */
 
 @keyframes marquee {
   0% {
@@ -61,13 +53,9 @@ html {
   animation: marquee 30s linear infinite;
 }
 
-/* ===========================
-   Estilos de contenido del blog
-   =========================== */
-
 .blog-prose hr {
   margin-top: 2rem;
   margin-bottom: 2rem;
   border: 0;
-  border-top: 1px solid rgb(229 231 235); /* gris claro */
+  border-top: 1px solid rgb(229 231 235);
 }

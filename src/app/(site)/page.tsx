@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Internación y Asistencia Domiciliaria en Buenos Aires | Earh Salud",
     description:
       "Servicios de salud en domicilio: internación, asistencia, enfermería, kinesiología y cuidadores en CABA y GBA.",
-    url: "https://earhsalud.com", // ajustá si cambia
+    url: "https://earhsalud.com",
     siteName: "Earh Salud",
     locale: "es_AR",
     type: "website",

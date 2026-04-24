@@ -13,12 +13,13 @@ export default function BlogIndexPage() {
   const posts = getAllPostsMeta();
 
   const categories = Array.from(
-    new Set(posts.map((p) => p.category).filter((c): c is string => Boolean(c)))
+    new Set(
+      posts.map((p) => p.category).filter((c): c is string => Boolean(c)),
+    ),
   );
 
   return (
     <section className="space-y-8">
-      {/* HERO DEL BLOG */}
       <header className="rounded-2xl border bg-gradient-to-b from-white to-neutral-50 p-6 sm:p-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="space-y-3">
@@ -59,7 +60,6 @@ export default function BlogIndexPage() {
         </div>
       </header>
 
-      {/* LISTADO DE POSTS */}
       {posts.length === 0 ? (
         <div className="rounded-2xl border bg-white/90 p-6 text-neutral-600 shadow-sm sm:p-8">
           <p>
@@ -81,7 +81,6 @@ export default function BlogIndexPage() {
                   href={`/blog/${post.slug}`}
                   className="group flex h-full flex-col rounded-2xl border bg-white/80 p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
                 >
-                  {/* Fecha + categoría */}
                   <div className="flex flex-wrap items-center gap-2 text-xs text-neutral-500">
                     <span>{formatDate(post.date)}</span>
                     {post.category && (
@@ -94,19 +93,16 @@ export default function BlogIndexPage() {
                     )}
                   </div>
 
-                  {/* Título */}
                   <h2 className="mt-3 text-lg font-semibold tracking-tight text-neutral-900 group-hover:text-blue-700">
                     {post.title}
                   </h2>
 
-                  {/* Extracto */}
                   {post.excerpt && (
                     <p className="mt-2 line-clamp-3 text-sm text-neutral-700">
                       {post.excerpt}
                     </p>
                   )}
 
-                  {/* CTA inferior */}
                   <div className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-blue-700">
                     Leer más
                     <span

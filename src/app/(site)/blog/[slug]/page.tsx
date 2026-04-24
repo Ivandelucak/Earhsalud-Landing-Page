@@ -49,7 +49,6 @@ export default async function BlogPostPage({ params }: { params: Params }) {
 
   return (
     <article className="space-y-8">
-      {/* Imagen de cabecera opcional */}
       {meta.image && (
         <div className="relative w-full overflow-hidden rounded-2xl border bg-neutral-100">
           <div className="relative aspect-[16/9] w-full">
@@ -65,10 +64,8 @@ export default async function BlogPostPage({ params }: { params: Params }) {
         </div>
       )}
 
-      {/* Encabezado del artículo */}
       <header className="space-y-3">
         <div className="flex flex-wrap items-center gap-2 text-xs text-neutral-600">
-          {/* Badge de categoría si existe */}
           {meta.category && (
             <span className="inline-flex items-center rounded-full border border-blue-100 bg-blue-50 px-3 py-1 font-medium text-blue-700">
               {meta.category}
@@ -92,7 +89,6 @@ export default async function BlogPostPage({ params }: { params: Params }) {
         )}
       </header>
 
-      {/* Contenido del artículo */}
       <div
         className="prose prose-neutral max-w-none blog-prose"
         dangerouslySetInnerHTML={{ __html: contentHtml }}
@@ -100,7 +96,6 @@ export default async function BlogPostPage({ params }: { params: Params }) {
 
       <hr className="mt-14 mb-0 border-neutral-200" />
 
-      {/* Navegación simple */}
       <div className="pt-6 flex flex-wrap gap-3">
         <Link
           href="/blog"
@@ -118,8 +113,6 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     </article>
   );
 }
-
-/* ---------- helpers ---------- */
 
 function formatDate(d: string) {
   if (!d) return "";

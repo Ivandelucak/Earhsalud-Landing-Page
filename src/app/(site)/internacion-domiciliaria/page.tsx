@@ -15,7 +15,6 @@ const CONTACT = {
   email: "idearhsalud@gmail.com",
 };
 
-// Schema de organización médica
 const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "MedicalOrganization",
@@ -26,7 +25,6 @@ const orgJsonLd = {
   medicalSpecialty: ["PrimaryCare", "Geriatric"],
 };
 
-// Schema de FAQ específico de esta página
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 export default function BackArrow() {
   const pathname = usePathname();
-  if (pathname === "/") return null; // no mostrar en home
+  if (pathname === "/") return null;
 
   return (
     <Link
@@ -21,7 +21,6 @@ export default function BackArrow() {
         transition
       "
       style={{
-        // margen de seguridad para móviles con notch
         paddingBottom: "calc(0.5rem + env(safe-area-inset-bottom, 0px))",
       }}
     >
@@ -30,7 +29,7 @@ export default function BackArrow() {
         height="24"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="#b0b0b0" // gris claro
+        stroke="#b0b0b0"
         strokeWidth="2.2"
         strokeLinecap="round"
         strokeLinejoin="round"
