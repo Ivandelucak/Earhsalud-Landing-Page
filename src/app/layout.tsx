@@ -10,6 +10,7 @@ const sourceSans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://earhsalud.com"),
   title: {
     default: "Earh Salud / Consultorios Médicos Uruguay",
     template: "%s | Earh Salud / CMU",

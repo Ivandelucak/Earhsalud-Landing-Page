@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Información legal y política de privacidad – Earh Salud",
   description:
     "Política de privacidad, condiciones de uso e información legal de Earh Salud.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 const CONTACT = {

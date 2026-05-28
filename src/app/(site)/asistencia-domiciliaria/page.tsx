@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Asistencia domiciliaria en CABA y GBA – Earh Salud",
   description:
     "Asistencia domiciliaria con prestaciones médicas y asistenciales en el hogar en CABA y Gran Buenos Aires. Profesionales con experiencia, atención personalizada y coordinación según cada caso.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 const CONTACT = {

@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     locale: "es_AR",
     type: "website",
   },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 const EARH_CONTACT = {

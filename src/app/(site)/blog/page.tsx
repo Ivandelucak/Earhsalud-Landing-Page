@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Blog – Earh Salud",
   description:
     "Artículos informativos sobre salud, prevención e internación domiciliaria en CABA y GBA.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function BlogIndexPage() {

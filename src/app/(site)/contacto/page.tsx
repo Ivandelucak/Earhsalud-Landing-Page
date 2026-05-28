@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "Contacto – Earh Salud",
   description:
     "Contactanos por Internación Domiciliaria, Asistencia Domiciliaria o Consultorios Médicos Uruguay. Atención en CABA y Gran Buenos Aires.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 const EARH_CONTACT = {

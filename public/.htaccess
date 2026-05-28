@@ -1,0 +1,21 @@
+RewriteEngine On
+
+# Forzar HTTPS y dominio sin www
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.earhsalud\.com$ [NC]
+RewriteRule ^ https://earhsalud.com%{REQUEST_URI} [R=301,L]
+
+# Redirecciones de URLs antiguas
+RewriteRule ^clinica-privada/?$ https://earhsalud.com/consultorios-medicos-uruguay [R=301,L]
+RewriteRule ^asistencia-medica/?$ https://earhsalud.com/asistencia-domiciliaria [R=301,L]
+
+# Quitar barra final en URLs internas, excepto la home
+RewriteCond %{REQUEST_URI} !^/$
+RewriteCond %{REQUEST_URI} .+/$
+RewriteRule ^(.+)/$ https://earhsalud.com/$1 [R=301,L]
+
+# Servir URLs limpias desde archivos .html generados por Next export
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+)$ /$1.html [L]

@@ -7,6 +7,9 @@ export const metadata: Metadata = {
     "Internación domiciliaria para adultos mayores en CABA y GBA – Earh Salud",
   description:
     "Internación domiciliaria y cuidados de adultos mayores en el hogar en CABA y Gran Buenos Aires. Menos infecciones intrahospitalarias, menos reinternaciones y más contención para la familia.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 const CONTACT = {
