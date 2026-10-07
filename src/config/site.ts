@@ -9,11 +9,11 @@ export const site = {
     },
   },
   contact: {
-    phoneHuman: "4743-2525",
-    phoneHref: "tel:+541147432525",
-    whatsappHuman: "11 3003-1247",
+    phoneHuman: "5841-9139",
+    phoneHref: "tel:+541158419139",
+    whatsappHuman: "5841-9139",
     whatsappHref:
-      "https://wa.me/541130031247?text=Hola%20Earh%20Salud%2C%20quisiera%20hacer%20una%20consulta",
+      "https://wa.me/541158419139?text=Hola%20Earh%20Salud%2C%20quisiera%20hacer%20una%20consulta",
     emailID: "idearhsalud@gmail.com", // Internación domiciliaria
     emailPoli: "consultoriosuruguay266@gmail.com", // Policonsultorio
   },

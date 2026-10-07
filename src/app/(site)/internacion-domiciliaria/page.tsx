@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 };
 
 const CONTACT = {
-  tel: "+54 11 4743-2525",
-  telHref: "tel:+541147432525",
+  tel: "+54 11 5841-9139",
+  telHref: "tel:+541158419139",
   email: "idearhsalud@gmail.com",
 };
 

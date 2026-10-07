@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 
 const CONTACT = {
   email: "idearhsalud@gmail.com",
-  telDisplay: "+54 11 4743-2525",
-  telHref: "tel:+541147432525",
+  telDisplay: "+54 11 5841-9139",
+  telHref: "tel:+541158419139",
 };
 
 export default function LegalPage() {

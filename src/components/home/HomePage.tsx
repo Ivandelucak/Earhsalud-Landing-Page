@@ -14,11 +14,11 @@ import {
 import { ReactNode, useEffect, useRef, useState } from "react";
 
 const CONTACT = {
-  tel: "+54 11 4743-2525",
-  telHref: "tel:+541147432525",
-  whatsapp: "+54 11 3003-1247",
+  tel: "+54 11 5841-9139",
+  telHref: "tel:+541158419139",
+  whatsapp: "+54 11 5841-9139",
   whatsappHref:
-    "https://wa.me/541130031247?text=Hola%20Earh%20Salud%2C%20quisiera%20hacer%20una%20consulta",
+    "https://wa.me/541158419139?text=Hola%20Earh%20Salud%2C%20quisiera%20hacer%20una%20consulta",
   instagram: "https://www.instagram.com/earhsalud/?hl=es",
 };
 

@@ -16,11 +16,11 @@ export default function WhatsAppFloatingButton({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="fixed bottom-4 right-4 z-50 inline-flex items-center gap-2 rounded-full bg-green-600 px-4 py-2 text-sm font-medium text-white shadow-lg hover:bg-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+      className="fixed bottom-4 right-4 z-50 inline-flex items-center gap-2 rounded-full bg-green-600 px-6 py-3.5 text-base font-medium text-white shadow-lg hover:bg-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
     >
       <svg
-        width="18"
-        height="18"
+        width="20"
+        height="20"
         viewBox="0 0 24 24"
         aria-hidden
         className="-mt-px"
@@ -30,6 +30,7 @@ export default function WhatsAppFloatingButton({
           fill="currentColor"
         />
       </svg>
+
       <span className="hidden sm:inline">{label}</span>
       <span className="sm:hidden">WhatsApp</span>
     </a>

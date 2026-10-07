@@ -20,20 +20,20 @@ export const metadata: Metadata = {
 };
 
 const EARH_CONTACT = {
-  telDisplay: "+54 11 4743-2525",
-  telHref: "tel:+541147432525",
-  whatsappDisplay: "+54 11 3003-1247",
+  telDisplay: "+54 11 5841-9139",
+  telHref: "tel:+541158419139",
+  whatsappDisplay: "+54 11 5841-9139",
   whatsappHref:
-    "https://wa.me/541130031247?text=Hola%20Earh%20Salud%2C%20quisiera%20hacer%20una%20consulta",
+    "https://wa.me/541158419139?text=Hola%20Earh%20Salud%2C%20quisiera%20hacer%20una%20consulta",
   email: "idearhsalud@gmail.com",
 };
 
 const CMU_CONTACT = {
-  telDisplay: "4743-2525",
-  telHref: "tel:+541147432525",
-  whatsappDisplay: "11 3003-1247",
+  telDisplay: "+54 11 5841-9139",
+  telHref: "tel:+541158419139",
+  whatsappDisplay: "+54 11 5841-9139",
   whatsappHref:
-    "https://wa.me/541130031247?text=Hola%20CMU%2C%20quisiera%20solicitar%20un%20turno",
+    "https://wa.me/541158419139?text=Hola%20CMU%2C%20quisiera%20solicitar%20un%20turno",
   email: "consultoriosuruguay266@gmail.com",
 };
 

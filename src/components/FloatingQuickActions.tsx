@@ -20,13 +20,13 @@ export default function FloatingQuickActions() {
         aria-label="Escribir por WhatsApp"
         className="
           inline-flex items-center gap-2
-          rounded-full px-4 py-2
+          rounded-full px-6 py-3.5
           bg-green-600 text-white shadow-lg
           active:scale-95 transition
         "
       >
-        <MessageCircle className="h-5 w-5" />
-        <span className="text-sm font-medium">WhatsApp</span>
+        <MessageCircle className="h-6 w-6" />
+        <span className="text-base font-medium">WhatsApp</span>
       </a>
 
       <a
@@ -34,13 +34,13 @@ export default function FloatingQuickActions() {
         aria-label="Llamar por teléfono"
         className="
           inline-flex items-center gap-2
-          rounded-full px-4 py-2
+          rounded-full px-6 py-3.5
           bg-neutral-900 text-white shadow-lg
           active:scale-95 transition
         "
       >
-        <Phone className="h-5 w-5" />
-        <span className="text-sm font-medium">Llamar</span>
+        <Phone className="h-6 w-6" />
+        <span className="text-base font-medium">Llamar</span>
       </a>
     </div>
   );

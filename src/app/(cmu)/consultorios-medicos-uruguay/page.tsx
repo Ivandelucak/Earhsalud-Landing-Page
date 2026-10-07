@@ -22,11 +22,11 @@ export const metadata: Metadata = {
 };
 
 const CONTACT = {
-  tel: "4743-2525",
-  telHref: "tel:+541147432525",
-  wsp: "11 3003-1247",
+  tel: "1158419139",
+  telHref: "tel:+541158419139",
+  wsp: "1158419139",
   wspHref:
-    "https://wa.me/541130031247?text=Hola%20CMU%2C%20quisiera%20solicitar%20un%20turno",
+    "https://wa.me/541158419139?text=Hola%20CMU%2C%20quisiera%20solicitar%20un%20turno",
   mail: "consultoriosuruguay266@gmail.com",
   mailHref: "mailto:consultoriosuruguay266@gmail.com",
   addr: "Uruguay 266, 1º E, CABA",
