@@ -22,8 +22,8 @@ export const metadata: Metadata = {
 };
 
 const CONTACT = {
-  tel: "1158419139",
-  telHref: "tel:+541158419139",
+  tel: "743-2525",
+  telHref: "tel:+5411743-2525",
   wsp: "1158419139",
   wspHref:
     "https://wa.me/541158419139?text=Hola%20CMU%2C%20quisiera%20solicitar%20un%20turno",
