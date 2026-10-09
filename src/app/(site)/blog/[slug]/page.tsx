@@ -1,8 +1,8 @@
 // FILE: src/app/blog/[slug]/page.tsx
 import type { Metadata } from "next";
 import Image from "next/image";
-import { getAllSlugs, getPostBySlug } from "@/lib/blog";
 import Link from "next/link";
+import { getAllSlugs, getPostBySlug } from "@/lib/blog";
 
 type Params = { slug: string };
 
@@ -14,9 +14,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Params;
+  params: Promise<Params>;
 }): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   const { meta } = await getPostBySlug(slug);
 
   const images = meta.image ? [{ url: meta.image }] : undefined;
@@ -41,8 +41,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function BlogPostPage({ params }: { params: Params }) {
-  const { slug } = params;
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
+  const { slug } = await params;
   const { meta, contentHtml } = await getPostBySlug(slug);
 
   const readingTime = getReadingTimeMinutes(contentHtml);
@@ -71,6 +75,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
               {meta.category}
             </span>
           )}
+
           <span className="text-neutral-500">
             {formatDate(meta.date)}
             {meta.author ? ` · ${meta.author}` : ""}
@@ -96,13 +101,14 @@ export default async function BlogPostPage({ params }: { params: Params }) {
 
       <hr className="mt-14 mb-0 border-neutral-200" />
 
-      <div className="pt-6 flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-3 pt-6">
         <Link
           href="/blog"
-          className="in e-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm hover:bg-neutral-50"
+          className="inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm hover:bg-neutral-50"
         >
           ← Volver al Blog
         </Link>
+
         <Link
           href="/contacto"
           className="inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm hover:bg-neutral-50"
@@ -116,6 +122,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
 
 function formatDate(d: string) {
   if (!d) return "";
+
   try {
     return new Date(d).toLocaleDateString("es-AR", {
       year: "numeric",
@@ -129,9 +136,12 @@ function formatDate(d: string) {
 
 function getReadingTimeMinutes(html: string): number | null {
   if (!html) return null;
-  const text = html.replace(/<[^>]+>/g, " "); // saco tags html
+
+  const text = html.replace(/<[^>]+>/g, " ");
   const words = text.trim().split(/\s+/).filter(Boolean);
+
   if (!words.length) return null;
-  const minutes = Math.ceil(words.length / 200); // ~200 wpm
+
+  const minutes = Math.ceil(words.length / 200);
   return minutes || 1;
 }
